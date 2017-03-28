@@ -6,5 +6,7 @@ target 'PrimeraEntrega' do
   use_frameworks!
 
   # Pods for PrimeraEntrega
-pod 'Firebase/Core'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Auth'
 end

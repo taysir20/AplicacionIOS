@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DataHolder.sharedInstance.initLocationAdmin()
         // Override point for customization after application launch.
-        FIRApp.configure()
-        return true
+        DataHolder.sharedInstance.initFireBase()
+              return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

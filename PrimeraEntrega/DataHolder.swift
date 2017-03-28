@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class DataHolder: NSObject {
     static let sharedInstance:DataHolder=DataHolder()
         var miUser:String?
         var miPass:String?
     
+    func initFireBase(){
+        FIRApp.configure()
+
+    }
+   
     var locationAdmin:LocationAdmin?
     
     
