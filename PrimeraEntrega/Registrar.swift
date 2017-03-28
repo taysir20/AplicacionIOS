@@ -21,6 +21,19 @@ class Registrar: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    func terminosCondiciones(){
+        
+        let terminos = UIAlertController(title: "Términos y condiciones ", message: "Este Acuerdo gobierna su uso de los servicios de Apple ('Servicios') mediante los cuales puede comprar, obtener, licenciar, alquilar o subscribirse (cuando sea posible) a medios, aplicaciones ('Aplicaciones') y otros servicios (en conjunto 'Contenido'). Nuestros Servicios son: iTunes Store, App Store, iBooks Store, Apple Music y Apple News. Nuestros Servicios están disponibles para su uso en su país de residencia ('País de residencia'). Para usar nuestros Servicios, necesita hardware y software compatible (se recomienda tener la última versión y en algunos casos es necesario) y acceso a Internet (podrán aplicarse cargos). El rendimiento de nuestros servicios podrá verse afectado por estos factores.", preferredStyle: .actionSheet)
+        
+        let btnTerminos = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        
+        terminos.addAction(btnTerminos)
+        
+        present(terminos, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func btnRegistro() {
         
         DataHolder.sharedInstance.miUser=usuario?.text
@@ -28,14 +41,6 @@ class Registrar: UIViewController {
         self.performSegue(withIdentifier: "registro", sender: self)
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

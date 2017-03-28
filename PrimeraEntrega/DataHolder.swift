@@ -13,9 +13,13 @@ class DataHolder: NSObject {
         var miUser:String?
         var miPass:String?
     
+    var locationAdmin:LocationAdmin?
+    
     
     
     //variable shareInstance hace referencia así misma una vez. Sola se ejecuta una vez al arrancar la app.
     
-    
+    func initLocationAdmin(){
+        locationAdmin=LocationAdmin()
+    }
 }

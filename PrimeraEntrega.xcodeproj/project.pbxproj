@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143D53FD1E8A61D700A33535 /* LocationAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D53FC1E8A61D700A33535 /* LocationAdmin.swift */; };
+		143D53FF1E8A6AC100A33535 /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D53FE1E8A6AC100A33535 /* VCMapa.swift */; };
 		D8B809DB1E82CAD000371276 /* VCColeccion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B809DA1E82CAD000371276 /* VCColeccion.swift */; };
 		D8B809DF1E82CF3700371276 /* CVCMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B809DE1E82CF3700371276 /* CVCMiCelda2.swift */; };
 		D8B809E21E82D7B200371276 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B809E11E82D7B200371276 /* MapKit.framework */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		143D53FC1E8A61D700A33535 /* LocationAdmin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAdmin.swift; sourceTree = "<group>"; };
+		143D53FE1E8A6AC100A33535 /* VCMapa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapa.swift; sourceTree = "<group>"; };
 		D8B809DA1E82CAD000371276 /* VCColeccion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCColeccion.swift; sourceTree = "<group>"; };
 		D8B809DE1E82CF3700371276 /* CVCMiCelda2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCMiCelda2.swift; sourceTree = "<group>"; };
 		D8B809E11E82D7B200371276 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -90,6 +94,8 @@
 				D8B809DA1E82CAD000371276 /* VCColeccion.swift */,
 				D8B809DE1E82CF3700371276 /* CVCMiCelda2.swift */,
 				D8B809E31E82D97A00371276 /* DataHolder.swift */,
+				143D53FC1E8A61D700A33535 /* LocationAdmin.swift */,
+				143D53FE1E8A6AC100A33535 /* VCMapa.swift */,
 			);
 			path = PrimeraEntrega;
 			sourceTree = "<group>";
@@ -172,7 +178,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8F174171E819CD300314D60 /* TVMiCelda.swift in Sources */,
+				143D53FF1E8A6AC100A33535 /* VCMapa.swift in Sources */,
 				D8B809DF1E82CF3700371276 /* CVCMiCelda2.swift in Sources */,
+				143D53FD1E8A61D700A33535 /* LocationAdmin.swift in Sources */,
 				D8F174031E8128C100314D60 /* IniciarSesion.swift in Sources */,
 				D8B809E41E82D97A00371276 /* DataHolder.swift in Sources */,
 				D8F174131E81452000314D60 /* Registrar.swift in Sources */,
