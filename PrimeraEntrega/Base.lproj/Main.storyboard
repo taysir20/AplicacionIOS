@@ -482,6 +482,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terminos y condiciones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yH4-wy-MT4">
+                                <rect key="frame" x="64" y="368" width="192" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.039765733839812967" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZC5-dU-wln">
+                                <rect key="frame" x="128" y="417" width="64" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Terminos"/>
+                                <connections>
+                                    <action selector="btnTerms:" destination="PxQ-fW-FH4" eventType="touchUpInside" id="UpP-da-AHG"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XWn-Ke-WYc">
+                                <rect key="frame" x="100" y="449" width="121" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Aceptar"/>
+                                    <segment title="Declinar"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -518,14 +541,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblTerms" destination="yH4-wy-MT4" id="txe-uR-KjH"/>
                         <outlet property="pass" destination="s5g-mH-J9l" id="kdj-lF-Izg"/>
+                        <outlet property="sgControl" destination="XWn-Ke-WYc" id="ZuK-3c-BlB"/>
                         <outlet property="usuario" destination="vpF-UN-gMk" id="oFz-vK-kcv"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="registro" id="S2o-SF-C8x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvR-kc-q5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-954" y="137"/>
+            <point key="canvasLocation" x="-954.375" y="136.26760563380282"/>
         </scene>
     </scenes>
     <resources>
@@ -533,6 +558,6 @@
         <image name="patan" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Ry-Ha-cba"/>
+        <segue reference="ysM-QA-j5l"/>
     </inferredMetricsTieBreakers>
 </document>

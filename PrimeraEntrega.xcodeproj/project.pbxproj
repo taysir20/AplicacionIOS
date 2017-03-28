@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		143D53FD1E8A61D700A33535 /* LocationAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D53FC1E8A61D700A33535 /* LocationAdmin.swift */; };
 		143D53FF1E8A6AC100A33535 /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D53FE1E8A6AC100A33535 /* VCMapa.swift */; };
+		14B15F1D1E8AB1740034BAB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */; };
+		218904C5740702FE59D15311 /* Pods_PrimeraEntrega.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DD40D8435B3856622AE330 /* Pods_PrimeraEntrega.framework */; };
 		D8B809DB1E82CAD000371276 /* VCColeccion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B809DA1E82CAD000371276 /* VCColeccion.swift */; };
 		D8B809DF1E82CF3700371276 /* CVCMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B809DE1E82CF3700371276 /* CVCMiCelda2.swift */; };
 		D8B809E21E82D7B200371276 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B809E11E82D7B200371276 /* MapKit.framework */; };
@@ -26,6 +28,9 @@
 /* Begin PBXFileReference section */
 		143D53FC1E8A61D700A33535 /* LocationAdmin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAdmin.swift; sourceTree = "<group>"; };
 		143D53FE1E8A6AC100A33535 /* VCMapa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapa.swift; sourceTree = "<group>"; };
+		14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B1DD40D8435B3856622AE330 /* Pods_PrimeraEntrega.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeraEntrega.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2F6393E52DBDBFFAE31842F /* Pods-PrimeraEntrega.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeraEntrega.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimeraEntrega/Pods-PrimeraEntrega.debug.xcconfig"; sourceTree = "<group>"; };
 		D8B809DA1E82CAD000371276 /* VCColeccion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCColeccion.swift; sourceTree = "<group>"; };
 		D8B809DE1E82CF3700371276 /* CVCMiCelda2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCMiCelda2.swift; sourceTree = "<group>"; };
 		D8B809E11E82D7B200371276 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -40,6 +45,7 @@
 		D8F174121E81452000314D60 /* Registrar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registrar.swift; sourceTree = "<group>"; };
 		D8F174141E8198C500314D60 /* VCPrincipal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPrincipal.swift; sourceTree = "<group>"; };
 		D8F174161E819CD300314D60 /* TVMiCelda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMiCelda.swift; sourceTree = "<group>"; };
+		F7A0D9C2B9A4961A27DC39E1 /* Pods-PrimeraEntrega.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeraEntrega.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrimeraEntrega/Pods-PrimeraEntrega.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,16 +54,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8B809E21E82D7B200371276 /* MapKit.framework in Frameworks */,
+				218904C5740702FE59D15311 /* Pods_PrimeraEntrega.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B048756BE3F2B2E544FAF28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2F6393E52DBDBFFAE31842F /* Pods-PrimeraEntrega.debug.xcconfig */,
+				F7A0D9C2B9A4961A27DC39E1 /* Pods-PrimeraEntrega.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D8B809E01E82D7B200371276 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D8B809E11E82D7B200371276 /* MapKit.framework */,
+				B1DD40D8435B3856622AE330 /* Pods_PrimeraEntrega.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -68,6 +85,7 @@
 				D8F173FF1E8128C100314D60 /* PrimeraEntrega */,
 				D8F173FE1E8128C100314D60 /* Products */,
 				D8B809E01E82D7B200371276 /* Frameworks */,
+				0B048756BE3F2B2E544FAF28 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +114,7 @@
 				D8B809E31E82D97A00371276 /* DataHolder.swift */,
 				143D53FC1E8A61D700A33535 /* LocationAdmin.swift */,
 				143D53FE1E8A6AC100A33535 /* VCMapa.swift */,
+				14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */,
 			);
 			path = PrimeraEntrega;
 			sourceTree = "<group>";
@@ -107,9 +126,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8F1740F1E8128C100314D60 /* Build configuration list for PBXNativeTarget "PrimeraEntrega" */;
 			buildPhases = (
+				1EE92AFD250FC312096D5090 /* [CP] Check Pods Manifest.lock */,
 				D8F173F91E8128C100314D60 /* Sources */,
 				D8F173FA1E8128C100314D60 /* Frameworks */,
 				D8F173FB1E8128C100314D60 /* Resources */,
+				C80C67ABE6AAF5786EF05D83 /* [CP] Embed Pods Frameworks */,
+				B726181A5DEDB038381A94F7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -165,12 +187,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8F1740B1E8128C100314D60 /* LaunchScreen.storyboard in Resources */,
+				14B15F1D1E8AB1740034BAB7 /* GoogleService-Info.plist in Resources */,
 				D8F174081E8128C100314D60 /* Assets.xcassets in Resources */,
 				D8F174061E8128C100314D60 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EE92AFD250FC312096D5090 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B726181A5DEDB038381A94F7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrimeraEntrega/Pods-PrimeraEntrega-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C80C67ABE6AAF5786EF05D83 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrimeraEntrega/Pods-PrimeraEntrega-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8F173F91E8128C100314D60 /* Sources */ = {
@@ -307,6 +378,7 @@
 		};
 		D8F174101E8128C100314D60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2F6393E52DBDBFFAE31842F /* Pods-PrimeraEntrega.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PrimeraEntrega/Info.plist;
@@ -319,6 +391,7 @@
 		};
 		D8F174111E8128C100314D60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7A0D9C2B9A4961A27DC39E1 /* Pods-PrimeraEntrega.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PrimeraEntrega/Info.plist;

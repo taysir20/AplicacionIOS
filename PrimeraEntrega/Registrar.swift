@@ -11,9 +11,19 @@ import UIKit
 class Registrar: UIViewController {
     @IBOutlet var usuario: UITextField?
     @IBOutlet var pass: UITextField?
+    @IBOutlet weak var sgControl: UISegmentedControl!
+    @IBOutlet var lblTerms: UILabel!
+    
+    @IBAction func btnTerms(_ sender: Any) {
+        
+        terminosCondiciones()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        lblTerms.text = ""
         // Do any additional setup after loading the view.
     }
 
@@ -36,9 +46,22 @@ class Registrar: UIViewController {
     
     @IBAction func btnRegistro() {
         
-        DataHolder.sharedInstance.miUser=usuario?.text
-        DataHolder.sharedInstance.miPass=pass?.text
-        self.performSegue(withIdentifier: "registro", sender: self)
+        let controlSegmento = sgControl.selectedSegmentIndex
+        
+        if (controlSegmento == 0) {
+            
+            
+            DataHolder.sharedInstance.miUser=usuario?.text
+            DataHolder.sharedInstance.miPass=pass?.text
+            self.performSegue(withIdentifier: "registro", sender: self)
+            
+            
+        } else if (controlSegmento == 1) {
+            
+            lblTerms.text = "Debes aceptar los terminos y condiciones"
+            
+        }
+        
     }
 
 

@@ -1,0 +1,6 @@
+framework module Pods_PrimeraEntrega {
+  umbrella header "Pods-PrimeraEntrega-umbrella.h"
+
+  export *
+  module * { export * }
+}
