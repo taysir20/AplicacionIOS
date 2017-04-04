@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class IniciarSesion: UIViewController {
     
@@ -31,16 +32,28 @@ class IniciarSesion: UIViewController {
           // txtVConsola?.text=String(format: "Usuario o contraseña incorrectos ",(txtfUsuario?.text)!,(txtfPass?.text)!)
        //}
         
-        if (txtfUsuario?.text?.isEqual(DataHolder.sharedInstance.miUser))! && ((txtfPass?.text)?.isEqual(DataHolder.sharedInstance.miPass))!{
+        /*if (txtfUsuario?.text?.isEqual(DataHolder.sharedInstance.miUser))! && ((txtfPass?.text)?.isEqual(DataHolder.sharedInstance.miPass))!{
             self.performSegue(withIdentifier: "logueo", sender: self)
            
         
         }else{
             txtVConsola?.text=String(format: "Usuario o contraseña incorrectos ",(txtfUsuario?.text)!,(txtfPass?.text)!)
              }
-    
+        */
+        FIRAuth.auth()?.signIn(withEmail: (txtfUsuario?.text)!, password: (txtfPass?.text)!) {(user,error) in
+            
+            if(error==nil){
+                self.performSegue(withIdentifier: "logueo", sender: self)
+            }else{
+                print("Error en Registro", error!)
+                self.txtVConsola?.text=String(format: "Usuario o contraseña incorrectos ",(self.txtfUsuario?.text)!,(self.txtfPass?.text)!)
+            }
+            }
+            
+        }
+
    
 
 
 }
-}
+

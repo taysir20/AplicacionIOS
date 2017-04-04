@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class Registrar: UIViewController {
     @IBOutlet var usuario: UITextField?
     @IBOutlet var pass: UITextField?
+    @IBOutlet var email: UITextField?
+
     @IBOutlet weak var sgControl: UISegmentedControl!
     @IBOutlet var lblTerms: UILabel!
     
@@ -49,12 +52,21 @@ class Registrar: UIViewController {
         let controlSegmento = sgControl.selectedSegmentIndex
         
         if (controlSegmento == 0) {
-            
-            
+            FIRAuth.auth()?.createUser(withEmail: (email?.text)!, password: (pass?.text)!) {(user,error) in
+                
+                if(error==nil){
+                    self.performSegue(withIdentifier: "registro", sender: self)
+                }else{
+                    print("Error en Registro", error!)
+                }
+                
+            }
+
+            /*
             DataHolder.sharedInstance.miUser=usuario?.text
             DataHolder.sharedInstance.miPass=pass?.text
             self.performSegue(withIdentifier: "registro", sender: self)
-            
+            */
             
         } else if (controlSegmento == 1) {
             

@@ -8,5 +8,6 @@ target 'PrimeraEntrega' do
   # Pods for PrimeraEntrega
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'Firebase/Database'
   pod 'Firebase/Auth'
 end
