@@ -10,9 +10,12 @@ import UIKit
 import FirebaseAuth
 
 class Registrar: UIViewController {
-    @IBOutlet var usuario: UITextField?
     @IBOutlet var pass: UITextField?
     @IBOutlet var email: UITextField?
+    @IBOutlet var confirmEmail: UITextField?
+    @IBOutlet var confirmPass: UITextField?
+
+
 
     @IBOutlet weak var sgControl: UISegmentedControl!
     @IBOutlet var lblTerms: UILabel!
@@ -51,31 +54,48 @@ class Registrar: UIViewController {
         
         let controlSegmento = sgControl.selectedSegmentIndex
         
-        if (controlSegmento == 0) {
-            FIRAuth.auth()?.createUser(withEmail: (email?.text)!, password: (pass?.text)!) {(user,error) in
-                
-                if(error==nil){
-                    self.performSegue(withIdentifier: "registro", sender: self)
-                }else{
-                    print("Error en Registro", error!)
-                }
-                
-            }
+        if(email?.text?.isEqual(confirmEmail?.text))! && ((pass?.text)?.isEqual(confirmPass?.text))!{
+            if (controlSegmento == 0) {
+                FIRAuth.auth()?.createUser(withEmail: (email?.text)!, password: (pass?.text)!) {(user,error) in
+                    if(error==nil){
+                        self.lblTerms.text = "¡Enhorabuena!¡Has sido registrado!"
+                        // delay para que se muestre por pantalla que se ha registrado correctamente antes de redirigirse
+                        // a la pantalla de "inicio de sesión" de nuevo.
+                        let when = DispatchTime.now() + 3
+                        DispatchQueue.main.asyncAfter(deadline: when){
+                            self.performSegue(withIdentifier: "registro", sender: self)
+                        }
+                        
+                    }else if((self.pass?.text?.characters.count)!<6){
+                        self.lblTerms.text = "La contraseña debe de contener al menos 6 caracteres"
+                    }else{
+                        self.lblTerms.text = "Ya existe un usuario registrado con este nombre"
 
+                    }
+                }
+            }else if(controlSegmento == 1) {
+                    self.lblTerms.text = "Debes aceptar los terminos y condiciones"
+                }
+        }else if (!(email?.text?.isEqual(confirmEmail?.text))!) && ((pass?.text)?.isEqual(confirmPass?.text))!{
+            self.lblTerms.text = "El email no coincide"
+        }else{
+            self.lblTerms.text = "La contraseña no coincide"
+        }
+
+        
+        
             /*
             DataHolder.sharedInstance.miUser=usuario?.text
             DataHolder.sharedInstance.miPass=pass?.text
             self.performSegue(withIdentifier: "registro", sender: self)
             */
             
-        } else if (controlSegmento == 1) {
-            
-            lblTerms.text = "Debes aceptar los terminos y condiciones"
-            
-        }
         
-    }
+        
+    
 
 
-
+    
+            
+}
 }
