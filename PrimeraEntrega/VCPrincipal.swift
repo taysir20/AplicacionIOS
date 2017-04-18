@@ -61,8 +61,8 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
         //valores del perro.
         let perroi:Perro=DataHolder.sharedInstance.arPerros![indexPath.row]
         cell.lblNombreMascota?.text=perroi.sNombre
-        cell.lblNombreMascota?.text=perroi.sEdad
-        cell.lblNombreMascota?.text=perroi.sRaza
+        cell.lblEdad?.text=perroi.sEdad
+        cell.lblRaza?.text=perroi.sRaza
 
 
         //cell.lblNombreMascota?.text="Tay"

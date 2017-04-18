@@ -14,6 +14,21 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DataHolder.sharedInstance.firDataBaseRef.child("Perros").observeSingleEvent(of: .value, with: {(snapshot)
+            in
+            var arTemp=snapshot.value as? Array<AnyObject>
+            
+            DataHolder.sharedInstance.arPerros=Array<Perro>()
+            // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
+            // guarden en otro ArrayList (perroi) y se vayan mostrando
+            for co in arTemp! as [AnyObject]{
+                let perroi=Perro(valores: co as! [String:AnyObject])
+                DataHolder.sharedInstance.arPerros?.append(perroi)
+            }
+            self.colPrincipal?.reloadData()
+            
+        })
 
         // Do any additional setup after loading the view.
     }
@@ -25,12 +40,19 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5;
+        if(DataHolder.sharedInstance.arPerros==nil){
+            return 0
+        }else{
+            return  (DataHolder.sharedInstance.arPerros?.count)!
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CVCMiCelda2 = collectionView.dequeueReusableCell(withReuseIdentifier: "miCelda2", for: indexPath) as! CVCMiCelda2
-        if (indexPath.row==0) {
+        let perroi:Perro=DataHolder.sharedInstance.arPerros![indexPath.row]
+        cell.lblNombreMascota?.text=perroi.sNombre
+        
+        /*if (indexPath.row==0) {
             cell.lblNombreMascota?.text="Coco"
             cell.imgMascota?.image=#imageLiteral(resourceName: "perritoinch")
             
@@ -51,6 +73,7 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
             cell.imgMascota?.image=#imageLiteral(resourceName: "perros-graciosos-7")
            
         }
+ */
         
         return cell
 
