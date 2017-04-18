@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
@@ -14,6 +16,26 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // Mediante el DataHolder se dice que se observe la raíz "Perros" del FireBase y al
+        //estar el código en la función viewDidLoad() entonces se ejecutará siempre que carguemos
+        // la tabla de la app. De este modo nos devuelve los datos de la rama coches en forma de array.
+        //observeSingleEvent se usa para que no cargue siempre la lista de datos y no gastar en exceso la tarifa
+        // plana del usuario
+        DataHolder.sharedInstance.firDataBaseRef.child("Perros").observeSingleEvent(of: .value, with: {(snapshot)
+             in
+                var arTemp=snapshot.value as? Array<AnyObject>
+                
+                DataHolder.sharedInstance.arPerros=Array<Perro>()
+                // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
+                // guarden en otro ArrayList (perroi) y se vayan mostrando
+                for co in arTemp! as [AnyObject]{
+                    let perroi=Perro(valores: co as! [String:AnyObject])
+                     DataHolder.sharedInstance.arPerros?.append(perroi)
+                }
+                self.tbMiTable?.reloadData()
+            
+                     })
 
         // Do any additional setup after loading the view.
     }
@@ -25,13 +47,26 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if(DataHolder.sharedInstance.arPerros==nil){
+            return 0
+        }else{
+          return  (DataHolder.sharedInstance.arPerros?.count)!
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TVMiCelda = tableView.dequeueReusableCell(withIdentifier: "miCelda")! as! TVMiCelda
+        // en la variable perroi, para cada posición del arrayList se irán sobrescribiendo con los nuevos
+        //valores del perro.
+        let perroi:Perro=DataHolder.sharedInstance.arPerros![indexPath.row]
+        cell.lblNombreMascota?.text=perroi.sNombre
+        cell.lblNombreMascota?.text=perroi.sEdad
+        cell.lblNombreMascota?.text=perroi.sRaza
+
+
         //cell.lblNombreMascota?.text="Tay"
-        if (indexPath.row==0) {
+       /*if (indexPath.row==0) {
             cell.lblNombreMascota?.text="Coco"
             cell.imgMascota?.image=#imageLiteral(resourceName: "perritoinch")
             cell.lblEdad?.text="2 años"
@@ -57,6 +92,7 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
             cell.lblEdad?.text="9 meses"
             cell.lblRaza?.text="Cruce Pitbull"
         }
+ */
 
         return cell
     }

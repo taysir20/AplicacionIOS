@@ -15,6 +15,7 @@ class DataHolder: NSObject {
         var miUser:String?
         var miPass:String?
         var firDataBaseRef : FIRDatabaseReference!
+        var arPerros:Array<Perro>?
     
     func initFireBase(){
         FIRApp.configure()

@@ -11,6 +11,7 @@
 		143D53FF1E8A6AC100A33535 /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D53FE1E8A6AC100A33535 /* VCMapa.swift */; };
 		14B15F1D1E8AB1740034BAB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */; };
 		218904C5740702FE59D15311 /* Pods_PrimeraEntrega.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DD40D8435B3856622AE330 /* Pods_PrimeraEntrega.framework */; };
+		D8AB38171EA66F0800C0218A /* Perro.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB38161EA66F0800C0218A /* Perro.swift */; };
 		D8B809DB1E82CAD000371276 /* VCColeccion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B809DA1E82CAD000371276 /* VCColeccion.swift */; };
 		D8B809DF1E82CF3700371276 /* CVCMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B809DE1E82CF3700371276 /* CVCMiCelda2.swift */; };
 		D8B809E21E82D7B200371276 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B809E11E82D7B200371276 /* MapKit.framework */; };
@@ -31,6 +32,7 @@
 		14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1DD40D8435B3856622AE330 /* Pods_PrimeraEntrega.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeraEntrega.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F6393E52DBDBFFAE31842F /* Pods-PrimeraEntrega.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeraEntrega.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimeraEntrega/Pods-PrimeraEntrega.debug.xcconfig"; sourceTree = "<group>"; };
+		D8AB38161EA66F0800C0218A /* Perro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Perro.swift; sourceTree = "<group>"; };
 		D8B809DA1E82CAD000371276 /* VCColeccion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCColeccion.swift; sourceTree = "<group>"; };
 		D8B809DE1E82CF3700371276 /* CVCMiCelda2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCMiCelda2.swift; sourceTree = "<group>"; };
 		D8B809E11E82D7B200371276 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -115,6 +117,7 @@
 				143D53FC1E8A61D700A33535 /* LocationAdmin.swift */,
 				143D53FE1E8A6AC100A33535 /* VCMapa.swift */,
 				14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */,
+				D8AB38161EA66F0800C0218A /* Perro.swift */,
 			);
 			path = PrimeraEntrega;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				143D53FD1E8A61D700A33535 /* LocationAdmin.swift in Sources */,
 				D8F174031E8128C100314D60 /* IniciarSesion.swift in Sources */,
 				D8B809E41E82D97A00371276 /* DataHolder.swift in Sources */,
+				D8AB38171EA66F0800C0218A /* Perro.swift in Sources */,
 				D8F174131E81452000314D60 /* Registrar.swift in Sources */,
 				D8F174011E8128C100314D60 /* AppDelegate.swift in Sources */,
 				D8B809DB1E82CAD000371276 /* VCColeccion.swift in Sources */,
