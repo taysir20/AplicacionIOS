@@ -17,7 +17,7 @@ class DataHolder: NSObject {
         var miPass:String?
         var firDataBaseRef : FIRDatabaseReference!
         var firStorage:FIRStorage?
-    var firStorageRef:FIRStorageReference?
+        var firStorageRef:FIRStorageReference?
         var arPerros:Array<Perro>?
     
     func initFireBase(){

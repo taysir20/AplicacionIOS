@@ -9,15 +9,15 @@
 import UIKit
 import MapKit
 
-class VCMapa: UIViewController, LocationAdminDelegate {
+class VCMapa: UIViewController,MKMapViewDelegate /*LocationAdminDelegate */{
     
     @IBOutlet var miMapa:MKMapView?
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataHolder.sharedInstance.locationAdmin?.delegate=self
-
-
+        //DataHolder.sharedInstance.locationAdmin?.delegate=self
+        miMapa?.showsUserLocation=true // Fuerza para mostrar la localización del usuario en el mapa y recurrimos al MKMapViewDelegate para usar el método mapView que nos dan la última posición del usuario.
+        
         // Do any additional setup after loading the view.
     }
 
@@ -26,13 +26,19 @@ class VCMapa: UIViewController, LocationAdminDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func localizacionActualizada(coordenada: CLLocationCoordinate2D) {
+   /* func localizacionActualizada(coordenada: CLLocationCoordinate2D) {
         centralizarEnPosicion(coordenada: coordenada)
     }
-    
+    */
     func centralizarEnPosicion(coordenada:CLLocationCoordinate2D){
         let region:MKCoordinateRegion = MKCoordinateRegion (center:coordenada,span:MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         miMapa?.setRegion(region, animated: true)
+    }
+    
+    //Método que nos da la última posición del usuario
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        centralizarEnPosicion(coordenada: userLocation.coordinate) // cada vez que se cambie de posición se llama
+        // al método "centralizarEnPosicion" y y se centra la nueva localización
     }
 
     /*

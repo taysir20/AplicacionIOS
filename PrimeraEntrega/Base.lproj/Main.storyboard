@@ -32,10 +32,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carlino-animales-perros-10268769.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mBZ-cl-13O">
-                                <rect key="frame" x="77" y="74" width="167" height="239"/>
+                                <rect key="frame" x="77" y="74" width="167" height="190"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electrónico" textAlignment="center" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pkf-7a-hf3">
-                                <rect key="frame" x="67" y="344" width="186" height="30"/>
+                                <rect key="frame" x="67" y="295" width="186" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="xDa-Br-VoB"/>
                                 </constraints>
@@ -44,7 +44,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wvg-NT-TUU">
-                                <rect key="frame" x="67" y="393" width="186" height="30"/>
+                                <rect key="frame" x="67" y="344" width="186" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YeM-dC-Vsg"/>
                                 </constraints>
@@ -53,23 +53,23 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrn-yA-NfB">
-                                <rect key="frame" x="114" y="514" width="92" height="30"/>
+                                <rect key="frame" x="114" y="465" width="92" height="30"/>
                                 <state key="normal" title="Crear cuenta"/>
                                 <connections>
                                     <segue destination="PxQ-fW-FH4" kind="show" identifier="" id="hu0-di-wyz"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-ln-Hkb">
-                                <rect key="frame" x="204" y="437" width="51" height="31"/>
+                                <rect key="frame" x="204" y="388" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recordar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-sJ-7eg">
-                                <rect key="frame" x="125" y="443" width="70" height="19"/>
+                                <rect key="frame" x="125" y="394" width="70" height="19"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ElV-gl-6gJ">
-                                <rect key="frame" x="16" y="293" width="288" height="43"/>
+                                <rect key="frame" x="16" y="244" width="288" height="43"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="ume-K0-2F6"/>
@@ -79,7 +79,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL9-rT-iby">
-                                <rect key="frame" x="139" y="484" width="42" height="22"/>
+                                <rect key="frame" x="139" y="435" width="42" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="e3b-ps-sMC"/>
                                 </constraints>
@@ -224,6 +224,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hlk-oD-ppx">
                                 <rect key="frame" x="16" y="28" width="288" height="483"/>
+                                <connections>
+                                    <outlet property="delegate" destination="d0R-2X-Ach" id="qPu-yj-5Yb"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
