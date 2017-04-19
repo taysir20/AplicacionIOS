@@ -43,7 +43,15 @@ class IniciarSesion: UIViewController {
         FIRAuth.auth()?.signIn(withEmail: (txtfUsuario?.text)!, password: (txtfPass?.text)!) {(user,error) in
             
             if(error==nil){
-                self.performSegue(withIdentifier: "logueo", sender: self)
+                 self.txtVConsola?.text = "¡Bienvenido!"
+                // delay para que se muestre por pantalla que se ha registrado correctamente antes de redirigirse
+                // a la pantalla de "inicio de sesión" de nuevo.
+                let when = DispatchTime.now() + 3
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    self.performSegue(withIdentifier: "logueo", sender: self)
+                }
+
+               
             }else{
                 print("Error en Registro", error!)
                 self.txtVConsola?.text=String(format: "Usuario o contraseña incorrectos ",(self.txtfUsuario?.text)!,(self.txtfPass?.text)!)

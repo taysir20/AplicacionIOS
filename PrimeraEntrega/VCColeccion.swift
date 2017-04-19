@@ -51,6 +51,7 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
         let cell:CVCMiCelda2 = collectionView.dequeueReusableCell(withReuseIdentifier: "miCelda2", for: indexPath) as! CVCMiCelda2
         let perroi:Perro=DataHolder.sharedInstance.arPerros![indexPath.row]
         cell.lblNombreMascota?.text=perroi.sNombre
+        cell.descargaImage(ruta: perroi.sRutaImagenMascota!)
         
         /*if (indexPath.row==0) {
             cell.lblNombreMascota?.text="Coco"

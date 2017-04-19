@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class TVMiCelda: UITableViewCell {
     
@@ -14,6 +15,7 @@ class TVMiCelda: UITableViewCell {
     @IBOutlet var imgMascota: UIImageView?
     @IBOutlet var lblEdad:UILabel?
     @IBOutlet var lblRaza:UILabel?
+    
 
 
     
@@ -26,6 +28,22 @@ class TVMiCelda: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func descargaImage(ruta:String){
+        // Create a reference to the file you want to download
+        let islandRef = DataHolder.sharedInstance.firStorageRef?.child(ruta)
+        
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        islandRef?.data(withMaxSize: 1 * 1024 * 1024) { data, error in
+            if error != nil {
+                // Uh-oh, an error occurred!
+            } else {
+                // Data for "images/island.jpg" is returned
+                let image = UIImage(data: data!)
+                self.imgMascota?.image=image
+            }
+        }
     }
 
 }

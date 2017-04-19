@@ -63,6 +63,7 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
         cell.lblNombreMascota?.text=perroi.sNombre
         cell.lblEdad?.text=perroi.sEdad
         cell.lblRaza?.text=perroi.sRaza
+        cell.descargaImage(ruta: perroi.sRutaImagenMascota!)
 
 
         //cell.lblNombreMascota?.text="Tay"
