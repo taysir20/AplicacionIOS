@@ -24,7 +24,11 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
         // plana del usuario
         DataHolder.sharedInstance.firDataBaseRef.child("Perros").observeSingleEvent(of: .value, with: {(snapshot)
              in
-                var arTemp=snapshot.value as? Array<AnyObject>
+            // Con el método observeSingleEvent lo que hacemos es evitar que se produzcan duplicados ya que con "obseve"
+            // si se producen. El inconveniente es que no se actualizaría en tiempo real los cambios de la base de datos
+            // y habría que volver a cargar la aplicación.
+            
+                let arTemp=snapshot.value as? Array<AnyObject>
                 
                 DataHolder.sharedInstance.arPerros=Array<Perro>()
                 // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se

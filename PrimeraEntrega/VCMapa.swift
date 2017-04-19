@@ -8,10 +8,12 @@
 
 import UIKit
 import MapKit
+import FirebaseDatabase
 
 class VCMapa: UIViewController,MKMapViewDelegate /*LocationAdminDelegate */{
     
     @IBOutlet var miMapa:MKMapView?
+    var pines:[String:MKAnnotation]?=[:]// inicializamos el hashMap de pines a vacío
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,26 @@ class VCMapa: UIViewController,MKMapViewDelegate /*LocationAdminDelegate */{
         miMapa?.showsUserLocation=true // Fuerza para mostrar la localización del usuario en el mapa y recurrimos al MKMapViewDelegate para usar el método mapView que nos dan la última posición del usuario.
         
         // Do any additional setup after loading the view.
+        
+        
+        DataHolder.sharedInstance.firDataBaseRef.child("Perros").observe(FIRDataEventType.value, with: {(snapshot)
+            in
+            let arTemp=snapshot.value as? Array<AnyObject>
+            
+            DataHolder.sharedInstance.arPerros=Array<Perro>()
+            // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
+            // guarden en otro ArrayList (perroi) y se vayan mostrando
+            for co in arTemp! as [AnyObject]{
+                let perroi=Perro(valores: co as! [String:AnyObject])
+                DataHolder.sharedInstance.arPerros?.append(perroi)
+                var coordTemp:CLLocationCoordinate2D=CLLocationCoordinate2D()
+                coordTemp.latitude = perroi.dbLat!
+                coordTemp.longitude = perroi.dbLon!
+                self.agregarPin(coordenada: coordTemp, lugar: perroi.sNombre!)
+            }
+            
+            
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,10 +52,30 @@ class VCMapa: UIViewController,MKMapViewDelegate /*LocationAdminDelegate */{
         centralizarEnPosicion(coordenada: coordenada)
     }
     */
-    func centralizarEnPosicion(coordenada:CLLocationCoordinate2D){
-        let region:MKCoordinateRegion = MKCoordinateRegion (center:coordenada,span:MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        miMapa?.setRegion(region, animated: true)
+    //Se trata del método con el que se agregan pines para las localizaciones que deseemos
+    func agregarPin(coordenada:CLLocationCoordinate2D, lugar varLugar:String){
+        
+        var annotation:MKPointAnnotation=MKPointAnnotation() //anotación de un punto determinado
+        // Con estas condiciones conseguimos actualizar en tiempo real la posición de un perro, borrando su posición
+        //anterior
+        if(pines?[varLugar]==nil){
+            
+        }else{
+            annotation=pines?[varLugar] as! MKPointAnnotation
+            miMapa?.removeAnnotation(annotation)
+        }
+        annotation.coordinate=coordenada // se trata de la coordenada de dicha anotación
+        annotation.title=varLugar // a la anotación se le agrega un título que es el de nuestra variable título
+        pines?[varLugar]=annotation//se añade la nueva anotación es decir, la nueva posición
+        miMapa?.addAnnotation(annotation)
+        
     }
+
+    func centralizarEnPosicion(coordenada:CLLocationCoordinate2D){
+        let region:MKCoordinateRegion = MKCoordinateRegion (center:coordenada,span:MKCoordinateSpan(latitudeDelta: 10.5, longitudeDelta: 0.05))
+       miMapa?.setRegion(region, animated: true)
+    }
+    
     
     //Método que nos da la última posición del usuario
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {

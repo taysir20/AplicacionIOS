@@ -17,7 +17,7 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         DataHolder.sharedInstance.firDataBaseRef.child("Perros").observeSingleEvent(of: .value, with: {(snapshot)
             in
-            var arTemp=snapshot.value as? Array<AnyObject>
+            let arTemp=snapshot.value as? Array<AnyObject>
             
             DataHolder.sharedInstance.arPerros=Array<Perro>()
             // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
