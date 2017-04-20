@@ -102,6 +102,13 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
         return cell
     }
 
+    @IBAction func btnVolver() {
+        DataHolder.sharedInstance.sEmail=""
+        DataHolder.sharedInstance.sPass=""
+
+        
+    }
+
     /*
     // MARK: - Navigation
 

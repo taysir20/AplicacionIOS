@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DataHolder.sharedInstance.initLocationAdmin()
         // Override point for customization after application launch.
         DataHolder.sharedInstance.initFireBase()
+        DataHolder.sharedInstance.loadData();
               return true
     }
 

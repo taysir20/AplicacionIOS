@@ -59,7 +59,7 @@
                                     <segue destination="PxQ-fW-FH4" kind="show" identifier="" id="hu0-di-wyz"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-ln-Hkb">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-ln-Hkb">
                                 <rect key="frame" x="204" y="388" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recordar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-sJ-7eg">
@@ -123,6 +123,7 @@
                         <outlet property="txtVConsola" destination="ElV-gl-6gJ" id="VzB-Gb-IdT"/>
                         <outlet property="txtfPass" destination="wvg-NT-TUU" id="LzK-Ay-fCn"/>
                         <outlet property="txtfUsuario" destination="Pkf-7a-hf3" id="kUR-pe-0mL"/>
+                        <outlet property="uiswitchRecordar" destination="mjz-ln-Hkb" id="ofT-wi-zlQ"/>
                         <segue destination="wPy-Zd-plP" kind="show" identifier="logueo" id="6ln-SY-Xl5"/>
                     </connections>
                 </viewController>
@@ -270,6 +271,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Volver"/>
                                 <connections>
+                                    <action selector="btnVolver" destination="464-rp-K5J" eventType="touchUpInside" id="hWl-YR-deW"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="3Ry-Ha-cba"/>
                                 </connections>
                             </button>
