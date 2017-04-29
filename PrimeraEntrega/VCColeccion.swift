@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     @IBOutlet var colPrincipal:UICollectionView?
+    //@IBOutlet var viewImagenAmpliada:UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +82,10 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
         return cell
 
     }
+    
+   
+ 
+    }
     /*
     // MARK: - Navigation
 
@@ -89,4 +96,4 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     */
 
-}
+

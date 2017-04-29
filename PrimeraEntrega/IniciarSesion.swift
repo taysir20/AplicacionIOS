@@ -13,11 +13,12 @@ class IniciarSesion: UIViewController {
     
     @IBOutlet var txtfUsuario: UITextField?
     @IBOutlet var txtfPass: UITextField?
-    @IBOutlet var txtVConsola: UITextView?
+    @IBOutlet var txtVConsola: UILabel?
     @IBOutlet var uiswitchRecordar:UISwitch?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtVConsola?.text=""
         // Do any additional setup after loading the view, typically from a nib.
         txtfUsuario?.text=DataHolder.sharedInstance.sEmail
         txtfPass?.text=DataHolder.sharedInstance.sPass

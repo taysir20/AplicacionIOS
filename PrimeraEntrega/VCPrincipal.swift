@@ -101,10 +101,16 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
         return cell
     }
+    //Método que accede al contenido de cada perro al seleccionar una fila de la tabla es decir al seleccioanar una celda
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "trantable", sender: self)
+    }
 
     @IBAction func btnVolver() {
         DataHolder.sharedInstance.sEmail=""
         DataHolder.sharedInstance.sPass=""
+        try! FIRAuth.auth()!.signOut()
 
         
     }
