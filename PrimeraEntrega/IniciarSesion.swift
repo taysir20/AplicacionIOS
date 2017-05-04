@@ -24,7 +24,7 @@ class IniciarSesion: UIViewController {
         txtfPass?.text=DataHolder.sharedInstance.sPass
         if(!(DataHolder.sharedInstance.sEmail?.isEmpty)!){
             loguearse()
-        }
+       }
 
     }
 

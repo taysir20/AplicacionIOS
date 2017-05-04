@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140D6AB21EBB393700989AD9 /* Perro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140D6AB11EBB393700989AD9 /* Perro.swift */; };
+		140D6AB61EBB39A900989AD9 /* infoPerro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140D6AB51EBB39A900989AD9 /* infoPerro.swift */; };
+		140D6AB81EBB39C800989AD9 /* Restablecer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140D6AB71EBB39C800989AD9 /* Restablecer.swift */; };
+		140D6ABA1EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140D6AB91EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift */; };
 		143D53FD1E8A61D700A33535 /* LocationAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D53FC1E8A61D700A33535 /* LocationAdmin.swift */; };
 		143D53FF1E8A6AC100A33535 /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D53FE1E8A6AC100A33535 /* VCMapa.swift */; };
 		14B15F1D1E8AB1740034BAB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */; };
 		218904C5740702FE59D15311 /* Pods_PrimeraEntrega.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DD40D8435B3856622AE330 /* Pods_PrimeraEntrega.framework */; };
-		D8AB38171EA66F0800C0218A /* Perro.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB38161EA66F0800C0218A /* Perro.swift */; };
-		D8B11F6A1EAFDBFC0069A548 /* InfoPerro.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B11F691EAFDBFC0069A548 /* InfoPerro.swift */; };
 		D8B809DB1E82CAD000371276 /* VCColeccion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B809DA1E82CAD000371276 /* VCColeccion.swift */; };
 		D8B809DF1E82CF3700371276 /* CVCMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B809DE1E82CF3700371276 /* CVCMiCelda2.swift */; };
 		D8B809E21E82D7B200371276 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B809E11E82D7B200371276 /* MapKit.framework */; };
 		D8B809E41E82D97A00371276 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B809E31E82D97A00371276 /* DataHolder.swift */; };
-		D8B959C71EAF489A00786F46 /* Restablecer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B959C61EAF489A00786F46 /* Restablecer.swift */; };
 		D8F174011E8128C100314D60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F174001E8128C100314D60 /* AppDelegate.swift */; };
 		D8F174031E8128C100314D60 /* IniciarSesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F174021E8128C100314D60 /* IniciarSesion.swift */; };
 		D8F174061E8128C100314D60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F174041E8128C100314D60 /* Main.storyboard */; };
@@ -29,18 +30,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140D6AB11EBB393700989AD9 /* Perro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Perro.swift; sourceTree = "<group>"; };
+		140D6AB51EBB39A900989AD9 /* infoPerro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoPerro.swift; sourceTree = "<group>"; };
+		140D6AB71EBB39C800989AD9 /* Restablecer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restablecer.swift; sourceTree = "<group>"; };
+		140D6AB91EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCMiCeldaColeccionFotos.swift; sourceTree = "<group>"; };
 		143D53FC1E8A61D700A33535 /* LocationAdmin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAdmin.swift; sourceTree = "<group>"; };
 		143D53FE1E8A6AC100A33535 /* VCMapa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapa.swift; sourceTree = "<group>"; };
 		14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1DD40D8435B3856622AE330 /* Pods_PrimeraEntrega.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeraEntrega.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F6393E52DBDBFFAE31842F /* Pods-PrimeraEntrega.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeraEntrega.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimeraEntrega/Pods-PrimeraEntrega.debug.xcconfig"; sourceTree = "<group>"; };
-		D8AB38161EA66F0800C0218A /* Perro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Perro.swift; sourceTree = "<group>"; };
-		D8B11F691EAFDBFC0069A548 /* InfoPerro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPerro.swift; sourceTree = "<group>"; };
 		D8B809DA1E82CAD000371276 /* VCColeccion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCColeccion.swift; sourceTree = "<group>"; };
 		D8B809DE1E82CF3700371276 /* CVCMiCelda2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCMiCelda2.swift; sourceTree = "<group>"; };
 		D8B809E11E82D7B200371276 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D8B809E31E82D97A00371276 /* DataHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
-		D8B959C61EAF489A00786F46 /* Restablecer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restablecer.swift; sourceTree = "<group>"; };
 		D8F173FD1E8128C100314D60 /* PrimeraEntrega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimeraEntrega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F174001E8128C100314D60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8F174021E8128C100314D60 /* IniciarSesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IniciarSesion.swift; sourceTree = "<group>"; };
@@ -121,9 +123,10 @@
 				143D53FC1E8A61D700A33535 /* LocationAdmin.swift */,
 				143D53FE1E8A6AC100A33535 /* VCMapa.swift */,
 				14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */,
-				D8AB38161EA66F0800C0218A /* Perro.swift */,
-				D8B959C61EAF489A00786F46 /* Restablecer.swift */,
-				D8B11F691EAFDBFC0069A548 /* InfoPerro.swift */,
+				140D6AB11EBB393700989AD9 /* Perro.swift */,
+				140D6AB51EBB39A900989AD9 /* infoPerro.swift */,
+				140D6AB71EBB39C800989AD9 /* Restablecer.swift */,
+				140D6AB91EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift */,
 			);
 			path = PrimeraEntrega;
 			sourceTree = "<group>";
@@ -261,11 +264,12 @@
 				143D53FF1E8A6AC100A33535 /* VCMapa.swift in Sources */,
 				D8B809DF1E82CF3700371276 /* CVCMiCelda2.swift in Sources */,
 				143D53FD1E8A61D700A33535 /* LocationAdmin.swift in Sources */,
+				140D6AB21EBB393700989AD9 /* Perro.swift in Sources */,
+				140D6AB61EBB39A900989AD9 /* infoPerro.swift in Sources */,
+				140D6ABA1EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift in Sources */,
 				D8F174031E8128C100314D60 /* IniciarSesion.swift in Sources */,
 				D8B809E41E82D97A00371276 /* DataHolder.swift in Sources */,
-				D8B11F6A1EAFDBFC0069A548 /* InfoPerro.swift in Sources */,
-				D8AB38171EA66F0800C0218A /* Perro.swift in Sources */,
-				D8B959C71EAF489A00786F46 /* Restablecer.swift in Sources */,
+				140D6AB81EBB39C800989AD9 /* Restablecer.swift in Sources */,
 				D8F174131E81452000314D60 /* Registrar.swift in Sources */,
 				D8F174011E8128C100314D60 /* AppDelegate.swift in Sources */,
 				D8B809DB1E82CAD000371276 /* VCColeccion.swift in Sources */,

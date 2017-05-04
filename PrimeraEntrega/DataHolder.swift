@@ -47,6 +47,13 @@ class DataHolder: NSObject {
         let props = UserDefaults.standard
         sEmail=props.string(forKey: "email_login")
         sPass=props.string(forKey: "pass_login")
+        if(sEmail==nil){
+            sEmail=""
+        }
+        if(sPass==nil){
+            sPass=""
+        }
+        
         
     }
     func saveData(){
