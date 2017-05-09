@@ -18,7 +18,7 @@ class Perro: NSObject {
     var dbLon: Double?
     var sRutaImagenMascota: String?
     var sRutaColeccionMascota = [String]()
-    var img: String?
+  
     
     init(valores:[String:AnyObject]){
         sNombre=valores["Nombre"] as? String
@@ -29,18 +29,13 @@ class Perro: NSObject {
         sRutaImagenMascota=valores["RutaImagenMascota"] as? String
         sRutaColeccionMascota=valores["ColeccionImg"] as! [String]
         
-        DataHolder.sharedInstance.numeroImgColeccion=sRutaColeccionMascota.count
         
-        for i in 0..<sRutaColeccionMascota.count{
-          
-                img=sRutaColeccionMascota[i]
-            
-            
-            
+    
+        
             
             
         }
         
     }
     
-}
+

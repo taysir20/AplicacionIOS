@@ -104,7 +104,7 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
     //Método que accede al contenido de cada perro al seleccionar una fila de la tabla es decir al seleccioanar una celda
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DataHolder.sharedInstance.indexPerro=indexPath.row
-        print(indexPath.row)
+        print(DataHolder.sharedInstance.indexPerro)
         performSegue(withIdentifier: "trantable", sender: self)
     }
 
