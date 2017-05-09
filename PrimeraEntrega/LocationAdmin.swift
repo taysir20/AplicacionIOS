@@ -23,11 +23,11 @@ class LocationAdmin: NSObject, CLLocationManagerDelegate {
         
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    /*func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("Mi posicición en lat: ", locations[0].coordinate.latitude, " longitud: ", locations[0].coordinate.longitude)
         delegate?.localizacionActualizada(coordenada:locations[0].coordinate)
     }
-    
+    */
     
 }
 

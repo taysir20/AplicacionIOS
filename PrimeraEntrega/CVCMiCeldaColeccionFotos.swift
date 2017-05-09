@@ -11,9 +11,9 @@ import UIKit
 class CVCMiCeldaColeccionFotos: UICollectionViewCell {
     
    
-    @IBOutlet var imgMascota: UIImageView?
+    @IBOutlet weak var coleccionImgPerros: UIImageView!
     
-    func descargaImgColeccion(ruta:String){
+    func descargaImage(ruta:String){
         // Create a reference to the file you want to download
         let islandRef = DataHolder.sharedInstance.firStorageRef?.child(ruta)
         
@@ -24,11 +24,10 @@ class CVCMiCeldaColeccionFotos: UICollectionViewCell {
             } else {
                 // Data for "images/island.jpg" is returned
                 let image = UIImage(data: data!)
-                self.imgMascota?.image=image
+                self.coleccionImgPerros?.image=image
             }
         }
     }
-    
     
 }
 

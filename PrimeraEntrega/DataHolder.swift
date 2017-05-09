@@ -20,6 +20,8 @@ class DataHolder: NSObject {
         var firStorage:FIRStorage?
         var firStorageRef:FIRStorageReference?
         var arPerros:Array<Perro>?
+        var indexPerro:Int?
+        var numeroImgColeccion: Int?
     
     //Variables para switch
         var sEmail:String?
@@ -47,13 +49,13 @@ class DataHolder: NSObject {
         let props = UserDefaults.standard
         sEmail=props.string(forKey: "email_login")
         sPass=props.string(forKey: "pass_login")
-        if(sEmail==nil){
+        /*if(sEmail==nil){
             sEmail=""
         }
         if(sPass==nil){
             sPass=""
         }
-        
+        */
         
     }
     func saveData(){
