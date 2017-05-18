@@ -12,35 +12,44 @@ import FirebaseDatabase
 
 class VCMapa: UIViewController,MKMapViewDelegate /*LocationAdminDelegate */{
     
-    @IBOutlet var miMapa:MKMapView?
+    @IBAction func muestrameRuta(_ sender: Any) {
+        
+        let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
+        let latitude:CLLocationDegrees = 36.762975//perroi.dbLat!
+        let longitude:CLLocationDegrees = -4.241126//perroi.dbLon!
+        let distancia:CLLocationDistance=1000
+        let coordenada = CLLocationCoordinate2DMake(latitude,longitude)
+        let region = MKCoordinateRegionMakeWithDistance(coordenada,distancia,distancia)
+        let opciones=[MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: region.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: region.span)]
+        let placemark = MKPlacemark(coordinate: coordenada)
+        let mapItem = MKMapItem(placemark:placemark)
+        mapItem.name=perroi.sNombre!
+        mapItem.openInMaps(launchOptions: opciones)
+    }
+    /*@IBOutlet var miMapa:MKMapView?
     var pines:[String:MKAnnotation]?=[:]// inicializamos el hashMap de pines a vacío
-   
+   */
     override func viewDidLoad() {
         super.viewDidLoad()
         //DataHolder.sharedInstance.locationAdmin?.delegate=self
-        miMapa?.showsUserLocation=true // Fuerza para mostrar la localización del usuario en el mapa y recurrimos al MKMapViewDelegate para usar el método mapView que nos dan la última posición del usuario.
+       // miMapa?.showsUserLocation=true // Fuerza para mostrar la localización del usuario en el mapa y recurrimos al MKMapViewDelegate para usar el método mapView que nos dan la última posición del usuario.
         
         // Do any additional setup after loading the view.
         
-        
-        DataHolder.sharedInstance.firDataBaseRef.child("Perros").observe(FIRDataEventType.value, with: {(snapshot)
-            in
-            let arTemp=snapshot.value as? Array<AnyObject>
-            
-            DataHolder.sharedInstance.arPerros=Array<Perro>()
-            // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
+        /*
+        let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
+
+                      // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
             // guarden en otro ArrayList (perroi) y se vayan mostrando
-            for co in arTemp! as [AnyObject]{
-                let perroi=Perro(valores: co as! [String:AnyObject])
-                DataHolder.sharedInstance.arPerros?.append(perroi)
-                var coordTemp:CLLocationCoordinate2D=CLLocationCoordinate2D()
+        
+                             var coordTemp:CLLocationCoordinate2D=CLLocationCoordinate2D()
                 coordTemp.latitude = perroi.dbLat!
                 coordTemp.longitude = perroi.dbLon!
                 self.agregarPin(coordenada: coordTemp, lugar: perroi.sNombre!)
-            }
+        
             
-            
-        })
+         */
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +62,7 @@ class VCMapa: UIViewController,MKMapViewDelegate /*LocationAdminDelegate */{
     }
     */
     //Se trata del método con el que se agregan pines para las localizaciones que deseemos
-    func agregarPin(coordenada:CLLocationCoordinate2D, lugar varLugar:String){
+    /*func agregarPin(coordenada:CLLocationCoordinate2D, lugar varLugar:String){
         
         var annotation:MKPointAnnotation=MKPointAnnotation() //anotación de un punto determinado
         // Con estas condiciones conseguimos actualizar en tiempo real la posición de un perro, borrando su posición
@@ -81,7 +90,7 @@ class VCMapa: UIViewController,MKMapViewDelegate /*LocationAdminDelegate */{
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         centralizarEnPosicion(coordenada: userLocation.coordinate) // cada vez que se cambie de posición se llama
         // al método "centralizarEnPosicion" y y se centra la nueva localización
-    }
+    }*/
 
     /*
     // MARK: - Navigation

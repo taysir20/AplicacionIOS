@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -236,7 +236,7 @@
         <!--Item-->
         <scene sceneID="kpq-lE-PUw">
             <objects>
-                <viewController id="d0R-2X-Ach" customClass="VCMapa" customModule="PrimeraEntrega" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d0R-2X-Ach" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="crM-Mw-EYu"/>
                         <viewControllerLayoutGuide type="bottom" id="CE5-WG-zak"/>
@@ -245,7 +245,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hlk-oD-ppx">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hlk-oD-ppx">
                                 <rect key="frame" x="16" y="28" width="288" height="1315"/>
                                 <connections>
                                     <outlet property="delegate" destination="d0R-2X-Ach" id="qPu-yj-5Yb"/>
@@ -290,7 +290,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="175"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EQE-bt-dCd" id="nwN-CR-9Uz">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="174.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Lk-Wb-hIM">
@@ -428,7 +428,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLB-GS-RTU">
-                                <rect key="frame" x="0.0" y="72" width="320" height="1279"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="1328"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tN8-gn-8WA">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1400"/>
@@ -445,7 +445,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="miCeldaColeccion" id="eSk-HU-1Be" customClass="CVCMiCeldaColeccionFotos" customModule="PrimeraEntrega" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.5" width="322" height="267"/>
+                                                        <rect key="frame" x="0.0" y="1" width="322" height="267"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                             <rect key="frame" x="0.0" y="0.0" width="322" height="267"/>
@@ -573,7 +573,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cot-kV-TgN">
-                                                <rect key="frame" x="8" y="806" width="304" height="70"/>
+                                                <rect key="frame" x="8" y="773" width="304" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hp2-0y-lll">
@@ -605,7 +605,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHc-VH-LQ6">
-                                <rect key="frame" x="137" y="1306" width="46" height="30"/>
+                                <rect key="frame" x="137" y="1355" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FSQ-Zi-gFT"/>
                                     <constraint firstAttribute="width" constant="46" id="SMu-PU-sRN"/>
@@ -647,34 +647,47 @@
             </objects>
             <point key="canvasLocation" x="2475" y="-525"/>
         </scene>
-        <!--View Controller-->
+        <!--Mapa-->
         <scene sceneID="xFX-hP-oMC">
             <objects>
-                <viewController id="Yyf-kM-t2A" sceneMemberID="viewController">
+                <viewController id="Yyf-kM-t2A" customClass="VCMapa" customModule="PrimeraEntrega" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dXv-An-Awl"/>
                         <viewControllerLayoutGuide type="bottom" id="OH1-of-DaE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e6z-yj-eht">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Ru-xP-hYl">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6B8-0e-LCF">
-                                <rect key="frame" x="20" y="31" width="24" height="24"/>
+                                <rect key="frame" x="16" y="28" width="73" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="return"/>
+                                <state key="normal" title="volver" image="return">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OlE-xG-0yC" kind="show" id="Y4U-sh-wVR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-Hh-8yO">
+                                <rect key="frame" x="98" y="395" width="125" height="30"/>
+                                <state key="normal" title="Muestrame la ruta"/>
+                                <connections>
+                                    <action selector="muestrameRuta:" destination="Yyf-kM-t2A" eventType="touchUpInside" id="3Wl-pt-GgB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hCF-Hh-8yO" firstAttribute="leading" secondItem="e6z-yj-eht" secondAttribute="leadingMargin" constant="82" id="Cxx-ff-u4V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hCF-Hh-8yO" secondAttribute="trailing" constant="81" id="Kir-P5-uLj"/>
+                            <constraint firstItem="OH1-of-DaE" firstAttribute="top" secondItem="hCF-Hh-8yO" secondAttribute="bottom" constant="136" id="Mx6-Ki-VWu"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obB-GP-8zm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3356" y="-711"/>
+            <point key="canvasLocation" x="3354.375" y="-711.97183098591552"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nDk-bJ-Wcf">
@@ -878,6 +891,10 @@
         <scene sceneID="CEU-bd-g3W">
             <objects>
                 <viewController id="uvd-7a-hxP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GUd-LU-NDN"/>
+                        <viewControllerLayoutGuide type="bottom" id="iwJ-WK-PRY"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mNt-Ry-fmQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -899,7 +916,8 @@
         <image name="user" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wNY-MG-OEv"/>
         <segue reference="wrf-K2-TLr"/>
+        <segue reference="Y4U-sh-wVR"/>
+        <segue reference="wNY-MG-OEv"/>
     </inferredMetricsTieBreakers>
 </document>
