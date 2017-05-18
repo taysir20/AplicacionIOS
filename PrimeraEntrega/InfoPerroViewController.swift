@@ -15,9 +15,11 @@ class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UIColl
     @IBOutlet weak var nombreMascota: UILabel!
     @IBOutlet weak var ColeccionFotos: UICollectionView!
     @IBOutlet weak var shadowView: UIView!
-     @IBOutlet weak var shadowView2: UIView!
+    @IBOutlet weak var shadowView2: UIView!
     @IBOutlet weak var shadowView3: UIView!
+    @IBOutlet weak var shadowView4: UIView!
     @IBOutlet weak var sEdad: UILabel!
+   
    
     @IBOutlet weak var mapa: UIButton!
     @IBOutlet weak var sSexo: UILabel!
@@ -46,7 +48,12 @@ class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UIColl
         shadowView3?.layer.shadowOffset=CGSize(width:0, height:1.75)
         shadowView3?.layer.shadowRadius = 1.7
         shadowView3?.layer.shadowOpacity = 0.45
-      
+        
+        shadowView4?.layer.cornerRadius=3
+        shadowView4?.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        shadowView4?.layer.shadowOffset=CGSize(width:0, height:1.75)
+        shadowView4?.layer.shadowRadius = 1.7
+        shadowView4?.layer.shadowOpacity = 0.45
         
       
       

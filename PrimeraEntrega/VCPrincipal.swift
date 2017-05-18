@@ -76,6 +76,11 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
         cell.lblRaza?.text=perroi.sRaza
         cell.imgMascota?.layer.cornerRadius = (cell.imgMascota?.frame.size.width)! / 2;
         cell.imgMascota?.layer.masksToBounds = true;
+        
+        cell.imgMascota?.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        cell.imgMascota?.layer.shadowOffset=CGSize(width:0, height:1.75)
+        cell.imgMascota?.layer.shadowRadius = 1.7
+        cell.imgMascota?.layer.shadowOpacity = 0.45
         cell.descargaImage(ruta: perroi.sRutaImagenMascota!)
         if(perroi.sSexo=="Macho"){
             cell.imgSexo?.image = #imageLiteral(resourceName: "masculine")

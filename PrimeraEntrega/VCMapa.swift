@@ -11,12 +11,12 @@ import MapKit
 import FirebaseDatabase
 
 class VCMapa: UIViewController,MKMapViewDelegate /*LocationAdminDelegate */{
-    
+    @IBOutlet var btnMostrarRuta: UIButton!
     @IBAction func muestrameRuta(_ sender: Any) {
         
         let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
-        let latitude:CLLocationDegrees = 36.762975//perroi.dbLat!
-        let longitude:CLLocationDegrees = -4.241126//perroi.dbLon!
+        let latitude:CLLocationDegrees = perroi.dbLat!
+        let longitude:CLLocationDegrees = perroi.dbLon!
         let distancia:CLLocationDistance=1000
         let coordenada = CLLocationCoordinate2DMake(latitude,longitude)
         let region = MKCoordinateRegionMakeWithDistance(coordenada,distancia,distancia)
@@ -31,6 +31,12 @@ class VCMapa: UIViewController,MKMapViewDelegate /*LocationAdminDelegate */{
    */
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnMostrarRuta?.layer.cornerRadius=3
+        btnMostrarRuta?.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        btnMostrarRuta?.layer.shadowOffset=CGSize(width:0, height:1.75)
+        btnMostrarRuta?.layer.shadowRadius = 1.7
+        btnMostrarRuta?.layer.shadowOpacity = 0.45
+
         //DataHolder.sharedInstance.locationAdmin?.delegate=self
        // miMapa?.showsUserLocation=true // Fuerza para mostrar la localización del usuario en el mapa y recurrimos al MKMapViewDelegate para usar el método mapView que nos dan la última posición del usuario.
         
