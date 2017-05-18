@@ -13,10 +13,13 @@ import FirebaseDatabase
 class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     @IBOutlet var colPrincipal:UICollectionView?
+    
     //@IBOutlet var viewImagenAmpliada:UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         
         DataHolder.sharedInstance.firDataBaseRef.child("Perros").observeSingleEvent(of: .value, with: {(snapshot)
             in

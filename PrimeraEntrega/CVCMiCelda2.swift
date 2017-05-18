@@ -25,7 +25,7 @@ class CVCMiCelda2: UICollectionViewCell {
                 // Data for "images/island.jpg" is returned
                 let image = UIImage(data: data!)
                 self.imgMascota?.image=image
-            }
+                          }
         }
     }
     

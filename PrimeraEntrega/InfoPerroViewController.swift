@@ -7,17 +7,49 @@
 //
 
 import UIKit
+import MapKit
 
 class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
 
-    
-    @IBOutlet weak var scrollInfo: UIScrollView!
-    @IBOutlet weak var segmentoInfo: UISegmentedControl!
+    @IBOutlet weak var stxtInfo: UITextView!
     @IBOutlet weak var nombreMascota: UILabel!
     @IBOutlet weak var ColeccionFotos: UICollectionView!
+    @IBOutlet weak var shadowView: UIView!
+     @IBOutlet weak var shadowView2: UIView!
+    @IBOutlet weak var shadowView3: UIView!
+    @IBOutlet weak var sEdad: UILabel!
+   
+    @IBOutlet weak var mapa: UIButton!
+    @IBOutlet weak var sSexo: UILabel!
+    @IBOutlet weak var imgSexo: UIImageView!
+     @IBOutlet weak var sCuidador: UILabel!
+     @IBOutlet weak var sTelefono: UILabel!
+     @IBOutlet weak var sEmail: UILabel!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        shadowView?.layer.cornerRadius=3
+        shadowView?.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        shadowView?.layer.shadowOffset=CGSize(width:0, height:1.75)
+        shadowView?.layer.shadowRadius = 1.7
+        shadowView?.layer.shadowOpacity = 0.45
+        
+        shadowView2?.layer.cornerRadius=3
+        shadowView2?.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        shadowView2?.layer.shadowOffset=CGSize(width:0, height:1.75)
+        shadowView2?.layer.shadowRadius = 1.7
+        shadowView2?.layer.shadowOpacity = 0.45
+        
+        shadowView3?.layer.cornerRadius=3
+        shadowView3?.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        shadowView3?.layer.shadowOffset=CGSize(width:0, height:1.75)
+        shadowView3?.layer.shadowRadius = 1.7
+        shadowView3?.layer.shadowOpacity = 0.45
+      
+        
+      
+      
         // Do any additional setup after loading the view.
     }
 
@@ -37,15 +69,7 @@ class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UIColl
     }
     */
     
-    @IBAction func cambiarSegmento(_ sender: Any) {
-        
-        if(segmentoInfo.selectedSegmentIndex==0){
-            ColeccionFotos.isHidden = false
-        }else{
-            ColeccionFotos.isHidden = true
-        }
-    }
-    
+   
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(DataHolder.sharedInstance.arPerros==nil){
@@ -60,11 +84,31 @@ class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UIColl
         let cell:CVCMiCeldaColeccionFotos = collectionView.dequeueReusableCell(withReuseIdentifier: "miCeldaColeccion", for: indexPath) as! CVCMiCeldaColeccionFotos
         
         let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!] //accedo al perro que he seleccionado
-          nombreMascota?.text=perroi.sNombre
+        nombreMascota?.text=perroi.sNombre
         cell.descargaImage(ruta: perroi.sRutaColeccionMascota[indexPath.row])//
+        
+        stxtInfo?.text=perroi.sDescripcionMascota
+        sEdad?.text=perroi.sEdad
+        sSexo?.text=perroi.sSexo
+        sCuidador?.text=perroi.sCuidador
+        sTelefono?.text=perroi.sTelefono
+        sEmail?.text=perroi.sEmail
+        if(perroi.sSexo=="Macho"){
+            imgSexo?.image = #imageLiteral(resourceName: "masculine")
+            
+        }else{
+            imgSexo?.image = #imageLiteral(resourceName: "femenine")
+        }
+
+        
 
         return cell;
         
+    
+        
     }
-
+    
+    @IBAction func mostrarMapa(){
+          self.performSegue(withIdentifier: "verMapa", sender: self)
+    }
 }

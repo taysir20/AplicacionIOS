@@ -15,6 +15,8 @@ class IniciarSesion: UIViewController {
     @IBOutlet var txtfPass: UITextField?
     @IBOutlet var txtVConsola: UILabel?
     @IBOutlet var uiswitchRecordar:UISwitch?
+    @IBOutlet var imgUser:UIImageView?
+    @IBOutlet var imgPass:UIImageView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,7 @@ class IniciarSesion: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         txtfUsuario?.text=DataHolder.sharedInstance.sEmail
         txtfPass?.text=DataHolder.sharedInstance.sPass
+        self.uiswitchRecordar?.isOn=true
         if(!(DataHolder.sharedInstance.sEmail?.isEmpty)!){
             loguearse()
        }
@@ -38,6 +41,10 @@ class IniciarSesion: UIViewController {
         FIRAuth.auth()?.signIn(withEmail: (txtfUsuario?.text)!, password: (txtfPass?.text)!) {(user,error) in
             
             if(error==nil){
+                self.imgUser?.image = #imageLiteral(resourceName: "user-cheked")
+                self.imgPass?.image = #imageLiteral(resourceName: "checked")
+                let myColor : UIColor = UIColor.blue
+                self.txtVConsola?.textColor = myColor
                 self.txtVConsola?.text = "¡Bienvenido!"
                 if(self.uiswitchRecordar?.isOn)!{
                     DataHolder.sharedInstance.sEmail = self.txtfUsuario?.text
@@ -59,7 +66,9 @@ class IniciarSesion: UIViewController {
                 
                 
             }else{
-                print("Error en Registro", error!)
+                print("Error en logueo", error!)
+                self.imgUser?.image = #imageLiteral(resourceName: "user-invalid")
+                self.imgPass?.image = #imageLiteral(resourceName: "cancel")
                 self.txtVConsola?.text=String(format: "Usuario o contraseña incorrectos ",(self.txtfUsuario?.text)!,(self.txtfPass?.text)!)
             }
         }

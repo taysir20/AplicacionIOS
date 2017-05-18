@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "43A117E5CF89C822EE7C4A512337D92D"
-               BuildableName = "Protobuf.framework"
-               BlueprintName = "Protobuf"
+               BlueprintIdentifier = "6D5CEDECD3D8DC52EA507E0431BDA8A0"
+               BuildableName = "GoogleToolboxForMac.framework"
+               BlueprintName = "GoogleToolboxForMac"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "43A117E5CF89C822EE7C4A512337D92D"
-            BuildableName = "Protobuf.framework"
-            BlueprintName = "Protobuf"
+            BlueprintIdentifier = "6D5CEDECD3D8DC52EA507E0431BDA8A0"
+            BuildableName = "GoogleToolboxForMac.framework"
+            BlueprintName = "GoogleToolboxForMac"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "43A117E5CF89C822EE7C4A512337D92D"
-            BuildableName = "Protobuf.framework"
-            BlueprintName = "Protobuf"
+            BlueprintIdentifier = "6D5CEDECD3D8DC52EA507E0431BDA8A0"
+            BuildableName = "GoogleToolboxForMac.framework"
+            BlueprintName = "GoogleToolboxForMac"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

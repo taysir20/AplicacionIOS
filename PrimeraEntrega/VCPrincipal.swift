@@ -13,7 +13,7 @@ import FirebaseDatabase
 class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet var tbMiTable:UITableView?
-
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +37,12 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
                     let perroi=Perro(valores: co as! [String:AnyObject])
                      DataHolder.sharedInstance.arPerros?.append(perroi)
                 }
+           
+           
+            
+            
+        
+
                 self.tbMiTable?.reloadData()
             
                      })
@@ -61,13 +67,22 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TVMiCelda = tableView.dequeueReusableCell(withIdentifier: "miCelda")! as! TVMiCelda
+        
         // en la variable perroi, para cada posición del arrayList se irán sobrescribiendo con los nuevos
         //valores del perro.
         let perroi:Perro=DataHolder.sharedInstance.arPerros![indexPath.row]
         cell.lblNombreMascota?.text=perroi.sNombre
         cell.lblEdad?.text=perroi.sEdad
         cell.lblRaza?.text=perroi.sRaza
+        cell.imgMascota?.layer.cornerRadius = (cell.imgMascota?.frame.size.width)! / 2;
+        cell.imgMascota?.layer.masksToBounds = true;
         cell.descargaImage(ruta: perroi.sRutaImagenMascota!)
+        if(perroi.sSexo=="Macho"){
+            cell.imgSexo?.image = #imageLiteral(resourceName: "masculine")
+            
+        }else{
+            cell.imgSexo?.image = #imageLiteral(resourceName: "femenine")
+        }
 
 
         //cell.lblNombreMascota?.text="Tay"
@@ -104,7 +119,7 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
     //Método que accede al contenido de cada perro al seleccionar una fila de la tabla es decir al seleccioanar una celda
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DataHolder.sharedInstance.indexPerro=indexPath.row
-        print(DataHolder.sharedInstance.indexPerro)
+        print(DataHolder.sharedInstance.indexPerro!)
         performSegue(withIdentifier: "trantable", sender: self)
     }
 

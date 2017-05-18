@@ -15,9 +15,11 @@ class TVMiCelda: UITableViewCell {
     @IBOutlet var imgMascota: UIImageView?
     @IBOutlet var lblEdad:UILabel?
     @IBOutlet var lblRaza:UILabel?
+    @IBOutlet var imgSexo: UIImageView?
+  
     
 
-
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()
