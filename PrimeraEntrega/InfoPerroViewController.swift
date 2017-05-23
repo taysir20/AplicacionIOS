@@ -8,9 +8,11 @@
 
 import UIKit
 import MapKit
+import Social
 
 class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
 
+    @IBOutlet weak var shareFacebook: UIButton!
     @IBOutlet weak var stxtInfo: UITextView!
     @IBOutlet weak var nombreMascota: UILabel!
     @IBOutlet weak var ColeccionFotos: UICollectionView!
@@ -27,6 +29,10 @@ class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UIColl
      @IBOutlet weak var sCuidador: UILabel!
      @IBOutlet weak var sTelefono: UILabel!
      @IBOutlet weak var sEmail: UILabel!
+    
+    
+        
+        
     
 
     override func viewDidLoad() {
@@ -76,8 +82,45 @@ class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UIColl
     }
     */
     
-   
+    @IBAction func compartirFcebook(_ sender: Any) {
+        let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
+        var img: UIImage!
+        //img = perroi.img!
+        
+        //alerta
+        let alert = UIAlertController(title: "Share", message: "¡Tu amigo de espera!", preferredStyle: .actionSheet)
+        //Primera acción
+        let actionOne = UIAlertAction(title: "Compartir con Facebook", style: .default) {
+            (action) in
+            // Comprobamos si el usuario está logueado en facebook
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
+                let enviar = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                enviar?.setInitialText(self.stxtInfo!.text);
+                enviar?.add(UIImage(named: "per1.jpg"))
+                self.present(enviar!, animated: true, completion: nil)
+            }else{
+                self.verAlerta(service: "Facebook")
+            }
+        
+    }
+    //Añadimos la priemra accion a la accion
+    alert.addAction(actionOne)
     
+    //Presentacion de la alerta
+    
+    self.present(alert, animated: true, completion: nil)
+}
+
+func verAlerta(service: String){
+    let alert = UIAlertController(title: "Error", message: "No se ha podido conectar al servidor \(service)", preferredStyle: .alert)
+    let action = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+    //Añadimos la accion al alert
+    alert.addAction(action)
+    // Presentacion del alert
+    self.present(alert, animated: true, completion:nil)
+}
+
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(DataHolder.sharedInstance.arPerros==nil){
             return 0

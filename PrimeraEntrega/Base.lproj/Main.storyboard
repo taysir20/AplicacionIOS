@@ -583,6 +583,9 @@
                                                         <rect key="frame" x="234" y="67" width="33" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button" image="facebook"/>
+                                                        <connections>
+                                                            <action selector="compartirFcebook:" destination="OlE-xG-0yC" eventType="touchUpInside" id="7Rm-d1-BRv"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comparte con tus amigos..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3A-WZ-sMG">
                                                         <rect key="frame" x="46" y="8" width="212" height="21"/>
@@ -685,6 +688,7 @@
                         <outlet property="shadowView2" destination="uKo-XF-Uab" id="PFK-gs-sB6"/>
                         <outlet property="shadowView3" destination="Cot-kV-TgN" id="bj5-go-eaK"/>
                         <outlet property="shadowView4" destination="T2D-fW-07g" id="nqS-g8-ANF"/>
+                        <outlet property="shareFacebook" destination="96G-tW-u2F" id="3Fh-Cq-6Tp"/>
                         <outlet property="stxtInfo" destination="j6l-DY-fU6" id="wWI-Zm-wm1"/>
                         <segue destination="Yyf-kM-t2A" kind="show" identifier="verMapa" id="zNh-mB-7kW"/>
                     </connections>
@@ -702,7 +706,7 @@
                         <viewControllerLayoutGuide type="bottom" id="OH1-of-DaE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e6z-yj-eht">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-Hh-8yO">
