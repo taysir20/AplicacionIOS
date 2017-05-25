@@ -13,6 +13,7 @@
 		140D6ABA1EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140D6AB91EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift */; };
 		143D53FD1E8A61D700A33535 /* LocationAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D53FC1E8A61D700A33535 /* LocationAdmin.swift */; };
 		143D53FF1E8A6AC100A33535 /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D53FE1E8A6AC100A33535 /* VCMapa.swift */; };
+		147DBFA61ED6C9740038CB42 /* RegistroPerro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DBFA51ED6C9740038CB42 /* RegistroPerro.swift */; };
 		14B15F1D1E8AB1740034BAB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */; };
 		218904C5740702FE59D15311 /* Pods_PrimeraEntrega.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DD40D8435B3856622AE330 /* Pods_PrimeraEntrega.framework */; };
 		D8B809DB1E82CAD000371276 /* VCColeccion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B809DA1E82CAD000371276 /* VCColeccion.swift */; };
@@ -36,6 +37,7 @@
 		140D6AB91EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCMiCeldaColeccionFotos.swift; sourceTree = "<group>"; };
 		143D53FC1E8A61D700A33535 /* LocationAdmin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAdmin.swift; sourceTree = "<group>"; };
 		143D53FE1E8A6AC100A33535 /* VCMapa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapa.swift; sourceTree = "<group>"; };
+		147DBFA51ED6C9740038CB42 /* RegistroPerro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroPerro.swift; sourceTree = "<group>"; };
 		14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1DD40D8435B3856622AE330 /* Pods_PrimeraEntrega.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeraEntrega.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F6393E52DBDBFFAE31842F /* Pods-PrimeraEntrega.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeraEntrega.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimeraEntrega/Pods-PrimeraEntrega.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				140D6AB71EBB39C800989AD9 /* Restablecer.swift */,
 				140D6AB91EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift */,
 				140254731EC1A108002482E5 /* InfoPerroViewController.swift */,
+				147DBFA51ED6C9740038CB42 /* RegistroPerro.swift */,
 			);
 			path = PrimeraEntrega;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				140254741EC1A108002482E5 /* InfoPerroViewController.swift in Sources */,
 				D8F174131E81452000314D60 /* Registrar.swift in Sources */,
 				D8F174011E8128C100314D60 /* AppDelegate.swift in Sources */,
+				147DBFA61ED6C9740038CB42 /* RegistroPerro.swift in Sources */,
 				D8B809DB1E82CAD000371276 /* VCColeccion.swift in Sources */,
 				D8F174151E8198C500314D60 /* VCPrincipal.swift in Sources */,
 			);
