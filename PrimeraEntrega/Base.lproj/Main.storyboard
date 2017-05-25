@@ -290,7 +290,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EQE-bt-dCd" id="nwN-CR-9Uz">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Lk-Wb-hIM">
@@ -422,7 +422,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="miCeldaColeccion" id="eSk-HU-1Be" customClass="CVCMiCeldaColeccionFotos" customModule="PrimeraEntrega" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1" width="322" height="267"/>
+                                                        <rect key="frame" x="0.0" y="0.5" width="322" height="267"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                             <rect key="frame" x="0.0" y="0.0" width="322" height="267"/>
@@ -573,11 +573,17 @@
                                                         <rect key="frame" x="97" y="67" width="36" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button" image="whatsapp"/>
+                                                        <connections>
+                                                            <action selector="compartirWhatsApp:" destination="OlE-xG-0yC" eventType="touchUpInside" id="hlE-DO-GBm"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGP-tm-SFe">
                                                         <rect key="frame" x="167" y="67" width="36" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button" image="twitter"/>
+                                                        <connections>
+                                                            <action selector="compartirTwitter:" destination="OlE-xG-0yC" eventType="touchUpInside" id="aHo-wl-LbM"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96G-tW-u2F">
                                                         <rect key="frame" x="234" y="67" width="33" height="32"/>
@@ -689,6 +695,8 @@
                         <outlet property="shadowView3" destination="Cot-kV-TgN" id="bj5-go-eaK"/>
                         <outlet property="shadowView4" destination="T2D-fW-07g" id="nqS-g8-ANF"/>
                         <outlet property="shareFacebook" destination="96G-tW-u2F" id="3Fh-Cq-6Tp"/>
+                        <outlet property="shareTwitter" destination="dGP-tm-SFe" id="ikn-Jh-oVA"/>
+                        <outlet property="shareWhatsApp" destination="O6i-b7-SQr" id="FfY-6b-nPF"/>
                         <outlet property="stxtInfo" destination="j6l-DY-fU6" id="wWI-Zm-wm1"/>
                         <segue destination="Yyf-kM-t2A" kind="show" identifier="verMapa" id="zNh-mB-7kW"/>
                     </connections>

@@ -11,7 +11,9 @@ import MapKit
 import Social
 
 class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
-
+    var imgMascota: UIImageView!
+    @IBOutlet weak var shareWhatsApp: UIButton!
+    @IBOutlet weak var shareTwitter: UIButton!
     @IBOutlet weak var shareFacebook: UIButton!
     @IBOutlet weak var stxtInfo: UITextView!
     @IBOutlet weak var nombreMascota: UILabel!
@@ -81,14 +83,82 @@ class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UIColl
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func compartirFcebook(_ sender: Any) {
+    @IBAction func compartirWhatsApp(_ sender: Any) {
         let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
-        var img: UIImage!
+        
+        descargaImage(ruta: perroi.sRutaImagenMascota!)
+        
         //img = perroi.img!
         
         //alerta
-        let alert = UIAlertController(title: "Share", message: "¡Tu amigo de espera!", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Share", message: "¡Tu amigo te espera!", preferredStyle: .actionSheet)
+        //Primera acción
+        let actionOne = UIAlertAction(title: "Compartir con WhatsApp", style: .default) {
+            (action) in
+            // Comprobamos si el usuario está logueado en facebook
+            /*if SLComposeViewController.isAvailable(forServiceType: SLServiceTypewhatsapp){
+                let enviar = SLComposeViewController(forServiceType: SLServiceTypewhatsapp)
+                enviar?.setInitialText(self.stxtInfo!.text);
+                enviar?.add(UIImage(named:perroi.sRutaImagenMascota!))
+                self.present(enviar!, animated: true, completion: nil)
+            }else{
+                self.verAlerta(service: "WhatsApp")
+            }
+            */
+        }
+        
+        //Añadimos la priemra accion a la accion
+        alert.addAction(actionOne)
+        
+        //Presentacion de la alerta
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+  
+        
+    
+    
+    @IBAction func compartirTwitter(_ sender: Any) {
+        let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
+        
+        descargaImage(ruta: perroi.sRutaImagenMascota!)
+        
+        //img = perroi.img!
+        
+        //alerta
+        let alert = UIAlertController(title: "Share", message: "¡Tu amigo te espera!", preferredStyle: .actionSheet)
+        //Primera acción
+        let actionOne = UIAlertAction(title: "Compartir con Twitter", style: .default) {
+            (action) in
+            // Comprobamos si el usuario está logueado en facebook
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
+                let enviar = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                enviar?.setInitialText(self.stxtInfo!.text);
+                enviar?.add(UIImage(named:perroi.sRutaImagenMascota! ))
+                self.present(enviar!, animated: true, completion: nil)
+            }else{
+                self.verAlerta(service: "Twitter")
+            }
+            
+        }
+        
+        //Añadimos la priemra accion a la accion
+        alert.addAction(actionOne)
+        
+        //Presentacion de la alerta
+        
+        self.present(alert, animated: true, completion: nil)
+
+    }
+    @IBAction func compartirFcebook(_ sender: Any) {
+        let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
+       
+        descargaImage(ruta: perroi.sRutaImagenMascota!)
+        
+        //img = perroi.img!
+        
+        //alerta
+        let alert = UIAlertController(title: "Share", message: "¡Tu amigo te espera!", preferredStyle: .actionSheet)
         //Primera acción
         let actionOne = UIAlertAction(title: "Compartir con Facebook", style: .default) {
             (action) in
@@ -96,7 +166,7 @@ class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UIColl
             if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
                 let enviar = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
                 enviar?.setInitialText(self.stxtInfo!.text);
-                enviar?.add(UIImage(named: "per1.jpg"))
+                enviar?.add(UIImage(named:perroi.sRutaImagenMascota! ))
                 self.present(enviar!, animated: true, completion: nil)
             }else{
                 self.verAlerta(service: "Facebook")
@@ -110,6 +180,27 @@ class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UIColl
     
     self.present(alert, animated: true, completion: nil)
 }
+    
+    
+    func descargaImage(ruta:String){ // pasamos por parametro la ruta de las imagenes que se encuentran en el FireBase
+        // Create a reference to the file you want to download
+        let islandRef = DataHolder.sharedInstance.firStorageRef?.child(ruta) //esta ruta que se ha obtenido en el
+        //DataHolder se almacena en la constante islandRef. De modo que si no hay ningún error al descargar su ruta
+        //entonces se devuelve la imagen que se guarda en la variable imgMascota que es la variable ligada y conectada
+        // con el UIImageView. Este proceso se repite para la colección.
+        
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        islandRef?.data(withMaxSize: 1 * 1024 * 1024) { data, error in
+            if error != nil {
+                // Uh-oh, an error occurred!
+            } else {
+                // Data for "images/island.jpg" is returned
+                let image = UIImage(data: data!)
+                self.imgMascota?.image=image
+            }
+        }
+    }
+
 
 func verAlerta(service: String){
     let alert = UIAlertController(title: "Error", message: "No se ha podido conectar al servidor \(service)", preferredStyle: .alert)
