@@ -60,7 +60,13 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
         if(DataHolder.sharedInstance.arPerros==nil){
             return 0
         }else{
+            let numPerros=DataHolder.sharedInstance.arPerros?.count;
+            DataHolder.sharedInstance.numPerros=numPerros;
+
           return  (DataHolder.sharedInstance.arPerros?.count)!
+          
+            
+            
         }
         
     }

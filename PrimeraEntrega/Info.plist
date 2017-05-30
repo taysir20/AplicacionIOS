@@ -34,6 +34,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Se van a proporcionar permisos para acceder a la cámara</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Se van a proporcionar permisos para acceder a la galería</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Se van a proporcionar permisos para la Localización GPS</string>
 	<key>NSLocationUsageDescription</key>

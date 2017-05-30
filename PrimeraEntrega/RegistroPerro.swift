@@ -8,17 +8,69 @@
 
 import UIKit
 
-class RegistroPerro: UIViewController {
-    @IBOutlet weak var shadowView: UIView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    let imgPicker = UIImagePickerController()
+    @IBOutlet weak var btnCamara: UIButton!
+    @IBOutlet weak var btnGaleria: UIButton!
+    @IBOutlet weak var imgSelfie: UIImageView!
+    @IBOutlet weak var nombreMascota: UITextField!
+    @IBOutlet weak var razaPerro: UITextField!
+    @IBOutlet weak var edadPerro: UITextField!
+    @IBOutlet weak var sexoPerro: UISegmentedControl!
+    @IBOutlet weak var descripcionPerro: UITextView!
+    @IBOutlet weak var nombreCuidador: UITextField!
+    @IBOutlet weak var telefonoCuidador: UITextField!
+    @IBOutlet weak var emailCuidador: UITextField!
+    @IBOutlet weak var enviarNuevoPerro: UIButton!
+    
+    @IBAction func abrirGaleria(_ sender: Any) {
         
-        shadowView?.layer.cornerRadius=3
-        shadowView?.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
-        shadowView?.layer.shadowOffset=CGSize(width:0, height:1.75)
-        shadowView?.layer.shadowRadius = 1.7
-        shadowView?.layer.shadowOpacity = 0.45
-
+        imgPicker.allowsEditing=false
+        imgPicker.sourceType = .photoLibrary
+        self.present(imgPicker, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func abrirCamara(_ sender: Any) {
+        
+        imgPicker.allowsEditing=false
+        imgPicker.sourceType = .camera
+        self.present(imgPicker, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func enviarDatosNuevoPerro(_ sender: Any) {
+        let miperro = Perro()
+        
+        miperro.sNombre=nombreMascota.text
+        miperro.sRaza=razaPerro.text
+        miperro.sEdad = edadPerro.text
+        miperro.sEdad = edadPerro.text
+       
+        if(sexoPerro.selectedSegmentIndex==0){
+             miperro.sSexo = "Hembra"
+        }else if(sexoPerro.selectedSegmentIndex==1){
+            miperro.sSexo = "Macho"
+        }
+        
+        miperro.sDescripcionMascota = descripcionPerro.text
+        miperro.sCuidador = nombreCuidador.text
+        miperro.sTelefono = telefonoCuidador.text
+        miperro.sEmail = emailCuidador.text
+        
+       
+        
+      
+        DataHolder.sharedInstance.insertarPerros(perro: miperro, position: DataHolder.sharedInstance.numPerros!)
+        
+    }
+    
+    
+    
+      override func viewDidLoad() {
+        super.viewDidLoad()
+        imgPicker.delegate=self
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +78,16 @@ class RegistroPerro: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let img = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imgSelfie?.image = img
+        self.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 
     /*

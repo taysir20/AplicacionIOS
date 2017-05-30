@@ -22,6 +22,7 @@ class DataHolder: NSObject {
         var arPerros:Array<Perro>?
         var indexPerro:Int?
         var numeroImgColeccion: Int?
+        var numPerros: Int?
     
     //Variables para switch
         var sEmail:String?
@@ -35,7 +36,11 @@ class DataHolder: NSObject {
 
     }
    
-    
+    func insertarPerros (perro:Perro, position pos: Int) {
+        let rutaTemp = String(format: "/Perros/%d", pos)
+        let nuevoPerro = [rutaTemp: perro.getDiccionary()]
+        firDataBaseRef.updateChildValues(nuevoPerro)
+    }  
     
     
     
