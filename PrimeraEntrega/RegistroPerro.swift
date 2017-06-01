@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -23,6 +26,8 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var telefonoCuidador: UITextField!
     @IBOutlet weak var emailCuidador: UITextField!
     @IBOutlet weak var enviarNuevoPerro: UIButton!
+    var imgData:Data?
+   
     
     @IBAction func abrirGaleria(_ sender: Any) {
         
@@ -37,6 +42,32 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
         imgPicker.allowsEditing=false
         imgPicker.sourceType = .camera
         self.present(imgPicker, animated: true, completion: nil)
+    
+    }
+    
+    @IBAction func subirImg(_ sender: Any) {
+        
+        var i:Int?
+        //i+=1
+        let imgRefPerfil = DataHolder.sharedInstance.firStorageRef?.child("Perros/perro60.jpg")
+        let uploadTaskPerfil = imgRefPerfil?.put(imgData!, metadata:nil){ (metadata,error)
+            in
+            guard let metadata = metadata else{
+                return
+            }
+            let downloadURL = metadata.downloadURL
+        }
+        
+        //Nos posicionamos en la raiz del sistema de archivos
+        let imgRef = DataHolder.sharedInstance.firStorageRef?.child("Perros/coleccion/perro60.jpg")
+        let uploadTask = imgRef?.put(imgData!, metadata:nil){ (metadata,error)
+            in
+            guard let metadata = metadata else{
+                return
+            }
+            let downloadURL = metadata.downloadURL
+        }
+
     }
     
     
@@ -58,8 +89,9 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
         miperro.sCuidador = nombreCuidador.text
         miperro.sTelefono = telefonoCuidador.text
         miperro.sEmail = emailCuidador.text
-        
-       
+        miperro.sRutaColeccionMascota=["Perros/coleccion/perro60.jpg"]
+        miperro.sRutaImagenMascota="Perros/perro60.jpg"
+
         
       
         DataHolder.sharedInstance.insertarPerros(perro: miperro, position: DataHolder.sharedInstance.numPerros!)
@@ -81,6 +113,8 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let img = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+        imgData = UIImageJPEGRepresentation(img!, 0.5)! as Data
         imgSelfie?.image = img
         self.dismiss(animated: true, completion: nil)
     }

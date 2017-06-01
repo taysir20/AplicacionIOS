@@ -274,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ibz-Nm-v5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1665" y="-492.25352112676057"/>
+            <point key="canvasLocation" x="1037" y="-996"/>
         </scene>
         <!--Info Perro View Controller-->
         <scene sceneID="rDO-XW-FKm">
@@ -288,7 +288,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLB-GS-RTU">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oLB-GS-RTU">
                                 <rect key="frame" x="0.0" y="72" width="320" height="1328"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tN8-gn-8WA">
@@ -578,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45A-fi-5Eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2426.25" y="-542.95774647887322"/>
+            <point key="canvasLocation" x="2295" y="-1573"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="xFX-hP-oMC">
@@ -589,7 +589,7 @@
                         <viewControllerLayoutGuide type="bottom" id="OH1-of-DaE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e6z-yj-eht">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-Hh-8yO">
@@ -654,7 +654,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOx-Uv-tYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737" y="137"/>
+            <point key="canvasLocation" x="79" y="224"/>
         </scene>
         <!--Item-->
         <scene sceneID="O07-RQ-PUx">
@@ -852,11 +852,11 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2rG-Je-SEN">
-                                        <rect key="frame" x="168" y="698" width="97" height="94"/>
+                                        <rect key="frame" x="168" y="698" width="131" height="113"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pau-OV-auj">
-                                        <rect key="frame" x="55" y="698" width="71" height="30"/>
+                                        <rect key="frame" x="89" y="739" width="71" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="GALERÍA"/>
                                         <connections>
@@ -871,11 +871,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Nq-Jy-YcO">
-                                        <rect key="frame" x="55" y="760" width="71" height="32"/>
+                                        <rect key="frame" x="18" y="738" width="71" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="CÁMARA"/>
                                         <connections>
                                             <action selector="abrirCamara:" destination="Y5s-D6-3WE" eventType="touchUpInside" id="e7x-SE-HfK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uA-Dn-Uvb">
+                                        <rect key="frame" x="45" y="778" width="91" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Subir Imagen"/>
+                                        <connections>
+                                            <action selector="subirImg:" destination="Y5s-D6-3WE" eventType="touchUpInside" id="u3r-tf-Sc3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -918,7 +926,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xc-zN-jke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2130" y="57.04225352112676"/>
+            <point key="canvasLocation" x="2137.5" y="250.35211267605635"/>
         </scene>
         <!--Restablecer-->
         <scene sceneID="eF1-V9-6R5">
@@ -1116,8 +1124,8 @@
         <image name="whatsapp" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wNY-MG-OEv"/>
         <segue reference="naO-eq-pNK"/>
         <segue reference="XMj-ER-ebE"/>
+        <segue reference="wNY-MG-OEv"/>
     </inferredMetricsTieBreakers>
 </document>

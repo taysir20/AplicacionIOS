@@ -64,7 +64,8 @@ class Perro: NSObject {
         hm["Raza"]=sRaza! as AnyObject
         hm["Edad"]=sEdad! as AnyObject
         hm["Sexo"]=sSexo! as AnyObject
-        hm["RutaImagenMascota"]=sRutaImagenMascota! as AnyObject
+        hm["RutaImagenMascota"]=sRutaImagenMascota! as AnyObject?
+        hm["ColeccionImg"]=sRutaColeccionMascota as AnyObject
         hm["lat"]=dbLat! as AnyObject
         hm["lon"]=dbLon! as AnyObject
         hm["Descripcion"]=sDescripcionMascota! as AnyObject
