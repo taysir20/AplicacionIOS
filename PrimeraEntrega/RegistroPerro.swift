@@ -11,8 +11,10 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 
-class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class RegistroPerro: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
+    @IBOutlet weak var perrerasPicker: UIPickerView!
+        var arrayPerreras = ["Perreza Mnicipal Badajoz", "Perrera Municipal Fuenlabrada", "Liga para la proteccion de Animales"]
     let imgPicker = UIImagePickerController()
     @IBOutlet weak var btnCamara: UIButton!
     @IBOutlet weak var btnGaleria: UIButton!
@@ -30,6 +32,8 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
     let randNum = arc4random_uniform(1000000000)
     let miperro = Perro()
     var rutaImg:String!
+    var lat:Double!
+    var long:Double!
 
     @IBAction func abrirGaleria(_ sender: Any) {
         
@@ -54,7 +58,7 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBAction func subirImg(_ sender: Any) {
         
        
-        
+       
         rutaImg=String(format:"Perros/perro%d.jpg", RandomInt(min: 0,max: Int(randNum)))
         let imgRefPerfil = DataHolder.sharedInstance.firStorageRef?.child(rutaImg)
         let uploadTaskPerfil = imgRefPerfil?.put(imgData!, metadata:nil){ (metadata,error)
@@ -66,13 +70,15 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
         }
         
         //Nos posicionamos en la raiz del sistema de archivos
-        let imgRef = DataHolder.sharedInstance.firStorageRef?.child(String(rutaImg))
+        let imgRef = DataHolder.sharedInstance.firStorageRef?.child(rutaImg)
         let uploadTask = imgRef?.put(imgData!, metadata:nil){ (metadata,error)
             in
             guard let metadata = metadata else{
                 return
             }
             let downloadURL = metadata.downloadURL
+            self.miperro.sRutaColeccionMascota=[self.rutaImg]
+
             
 
         }
@@ -97,9 +103,9 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
         miperro.sCuidador = nombreCuidador.text
         miperro.sTelefono = telefonoCuidador.text
         miperro.sEmail = emailCuidador.text
-        miperro.sRutaImagenMascota=String(format:"Perros/perro%d.jpg", rutaImg)
-        miperro.sRutaColeccionMascota=[String(format:"Perros/coleccion/perro%d.jpg",rutaImg)]
-
+        miperro.sRutaImagenMascota=rutaImg
+        miperro.dbLat=lat
+        miperro.dbLon=long
         
       
         DataHolder.sharedInstance.insertarPerros(perro: miperro, position: DataHolder.sharedInstance.numPerros!)
@@ -110,8 +116,39 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
       override func viewDidLoad() {
         super.viewDidLoad()
+        perrerasPicker.dataSource=self
+        perrerasPicker.delegate=self
+        
         imgPicker.delegate=self
         // Do any additional setup after loading the view.
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrayPerreras.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arrayPerreras[row]
+
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        
+        if (row == 0) {
+            
+            lat = 38.779601
+            long = -7.004673
+        } else if (row == 1) {
+            lat = 40.258999
+            long = -3.785575
+                } else if (row == 2) {
+            
+            lat = 41.416761
+            long = 2.129203
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,7 +159,7 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let img = info[UIImagePickerControllerOriginalImage] as? UIImage
         
-        imgData = UIImageJPEGRepresentation(img!, 0.5)! as Data
+        imgData = UIImageJPEGRepresentation(img!, 0.1)! as Data
         imgSelfie?.image = img
         self.dismiss(animated: true, completion: nil)
     }
