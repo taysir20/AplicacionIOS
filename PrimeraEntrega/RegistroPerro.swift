@@ -27,8 +27,10 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var emailCuidador: UITextField!
     @IBOutlet weak var enviarNuevoPerro: UIButton!
     var imgData:Data?
-   
-    
+    let randNum = arc4random_uniform(1000000000)
+    let miperro = Perro()
+    var rutaImg:String!
+
     @IBAction func abrirGaleria(_ sender: Any) {
         
         imgPicker.allowsEditing=false
@@ -44,12 +46,17 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.present(imgPicker, animated: true, completion: nil)
     
     }
+    func RandomInt(min: Int, max: Int) -> Int {
+        if max < min { return min }
+        return Int(arc4random_uniform(UInt32((max - min) + 1))) + min
+    }
     
     @IBAction func subirImg(_ sender: Any) {
         
-        var i:Int?
-        //i+=1
-        let imgRefPerfil = DataHolder.sharedInstance.firStorageRef?.child("Perros/perro60.jpg")
+       
+        
+        rutaImg=String(format:"Perros/perro%d.jpg", RandomInt(min: 0,max: Int(randNum)))
+        let imgRefPerfil = DataHolder.sharedInstance.firStorageRef?.child(rutaImg)
         let uploadTaskPerfil = imgRefPerfil?.put(imgData!, metadata:nil){ (metadata,error)
             in
             guard let metadata = metadata else{
@@ -59,20 +66,21 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
         }
         
         //Nos posicionamos en la raiz del sistema de archivos
-        let imgRef = DataHolder.sharedInstance.firStorageRef?.child("Perros/coleccion/perro60.jpg")
+        let imgRef = DataHolder.sharedInstance.firStorageRef?.child(String(rutaImg))
         let uploadTask = imgRef?.put(imgData!, metadata:nil){ (metadata,error)
             in
             guard let metadata = metadata else{
                 return
             }
             let downloadURL = metadata.downloadURL
+            
+
         }
 
     }
     
     
     @IBAction func enviarDatosNuevoPerro(_ sender: Any) {
-        let miperro = Perro()
         
         miperro.sNombre=nombreMascota.text
         miperro.sRaza=razaPerro.text
@@ -89,8 +97,8 @@ class RegistroPerro: UIViewController, UIImagePickerControllerDelegate, UINaviga
         miperro.sCuidador = nombreCuidador.text
         miperro.sTelefono = telefonoCuidador.text
         miperro.sEmail = emailCuidador.text
-        miperro.sRutaColeccionMascota=["Perros/coleccion/perro60.jpg"]
-        miperro.sRutaImagenMascota="Perros/perro60.jpg"
+        miperro.sRutaImagenMascota=String(format:"Perros/perro%d.jpg", rutaImg)
+        miperro.sRutaColeccionMascota=[String(format:"Perros/coleccion/perro%d.jpg",rutaImg)]
 
         
       
