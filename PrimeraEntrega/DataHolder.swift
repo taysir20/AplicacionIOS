@@ -23,6 +23,8 @@ class DataHolder: NSObject {
         var indexPerro:Int?
         var numeroImgColeccion: Int?
         var numPerros: Int?
+        var Usuario: FIRUser?
+        var uid: String?
     
     //Variables para switch
         var sEmail:String?

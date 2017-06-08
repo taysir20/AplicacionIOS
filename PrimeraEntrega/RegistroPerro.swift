@@ -107,6 +107,7 @@ class RegistroPerro: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         miperro.sRutaImagenMascota=rutaImg
         miperro.dbLat=lat
         miperro.dbLon=long
+        miperro.uid=DataHolder.sharedInstance.uid
         
       
         DataHolder.sharedInstance.insertarPerros(perro: miperro, position: DataHolder.sharedInstance.numPerros!)

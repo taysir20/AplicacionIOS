@@ -7,13 +7,11 @@
 //
 
 import UIKit
-import MessageUI
 
-class Contactar: UIViewController, MFMailComposeViewControllerDelegate {
 
-    @IBOutlet weak var btnSend: UIButton!
-    
-    @IBOutlet weak var btnLlamar: UIButton!
+class Contactar: UIViewController {
+
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,32 +23,7 @@ class Contactar: UIViewController, MFMailComposeViewControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func enviarMensaje(_ sender: Any) {
-         let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
-        let mailCompose = MFMailComposeViewController()
-        mailCompose.mailComposeDelegate = self
-        mailCompose.setToRecipients([perroi.sEmail!])
-        mailCompose.setSubject("Hola!")
-        mailCompose.setMessageBody("Estimado/a" + perroi.sCuidador!, isHTML: false)
-        if(MFMailComposeViewController.canSendMail()){
-            self.present(mailCompose, animated:true, completion: nil)
-        }else{
-            print("Falló el envío!!!")
-        }
-        
-    }
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-    
-    @IBAction func llamar(_ sender: Any) {
-          let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
-        let url: NSURL = URL(string: "TEL://" + perroi.sTelefono!)! as URL as NSURL
-        UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
-    }
-    
-    /*
+      /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

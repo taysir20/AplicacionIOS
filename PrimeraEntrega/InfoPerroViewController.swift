@@ -9,8 +9,12 @@
 import UIKit
 import MapKit
 import Social
+import MessageUI
 
-class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
+class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, MFMailComposeViewControllerDelegate {
+    @IBOutlet weak var btnSend: UIButton!
+    
+    @IBOutlet weak var btnLlamar: UIButton!
     var imgMascota: UIImageView!
     @IBOutlet weak var btnContactar: UIButton!
       @IBOutlet var btnMostrarRuta: UIButton!
@@ -238,6 +242,9 @@ func verAlerta(service: String){
         }
     }
     
+    
+    //TUVILLA
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { // esta funcion funciona como un for que ejecuta cada index
         let cell:CVCMiCeldaColeccionFotos = collectionView.dequeueReusableCell(withReuseIdentifier: "miCeldaColeccion", for: indexPath) as! CVCMiCeldaColeccionFotos
         
@@ -265,6 +272,33 @@ func verAlerta(service: String){
     
         
     }
+    @IBAction func enviarMensaje(_ sender: Any) {
+        let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
+        let mailCompose = MFMailComposeViewController()
+        mailCompose.mailComposeDelegate = self
+        mailCompose.setToRecipients([perroi.sEmail!])
+        mailCompose.setSubject("Hola!")
+        mailCompose.setMessageBody("Estimado/a" + perroi.sCuidador!, isHTML: false)
+        if(MFMailComposeViewController.canSendMail()){
+            self.present(mailCompose, animated:true, completion: nil)
+        }else{
+            print("Falló el envío!!!")
+        }
+
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func llamar(_ sender: Any) {
+        let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
+        let url: NSURL = URL(string: "TEL://" + perroi.sTelefono!)! as URL as NSURL
+        UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+
+    }
+    
+    
     
     
 }

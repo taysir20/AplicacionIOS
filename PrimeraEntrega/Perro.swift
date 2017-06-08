@@ -23,6 +23,7 @@ class Perro: NSObject {
     var sCuidador: String?
     var sTelefono:String?
     var sEmail: String?
+    var uid: String?
     
     override init(){
         super.init()
@@ -36,6 +37,7 @@ class Perro: NSObject {
         sCuidador=""
         sTelefono=""
         sEmail=""
+        uid=""
     }
     init(valores:[String:AnyObject]){
         sNombre=valores["Nombre"] as? String
@@ -50,7 +52,7 @@ class Perro: NSObject {
         sCuidador=valores["Cuidador"] as? String
         sTelefono=valores["Telefono"] as? String
         sEmail=valores["Email"] as? String
-
+        uid=valores["uid"] as? String
         
     
         
@@ -73,7 +75,7 @@ class Perro: NSObject {
         hm["Cuidador"]=sCuidador! as AnyObject
         hm["Telefono"]=sTelefono! as AnyObject
         hm["Email"]=sEmail! as AnyObject
-        
+         hm["uid"]=uid! as AnyObject
         return hm
     }
         

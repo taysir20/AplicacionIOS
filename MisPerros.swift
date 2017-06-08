@@ -1,8 +1,8 @@
 //
-//  VCPrincipal.swift
+//  MisPerros.swift
 //  PrimeraEntrega
 //
-//  Created by Taysir Al-Shareef Pinero on 21/3/17.
+//  Created by TAYSIR AL-SHAREEF PINERO on 8/6/17.
 //  Copyright © 2017 Taysir Al-Shareef Pinero. All rights reserved.
 //
 
@@ -10,46 +10,55 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class MisPerros: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet var tbMiTable:UITableView?
-  
+    var UserId: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // Mediante el DataHolder se dice que se observe la raíz "Perros" del FireBase y al
+        // Mediante el DataHolder se dice que se observe la raíz "Perros" del FireBase y al
         //estar el código en la función viewDidLoad() entonces se ejecutará siempre que carguemos
         // la tabla de la app. De este modo nos devuelve los datos de la rama coches en forma de array.
         //observeSingleEvent se usa para que no cargue siempre la lista de datos y no gastar en exceso la tarifa
         // plana del usuario
         DataHolder.sharedInstance.firDataBaseRef.child("Perros").observeSingleEvent(of: .value, with: {(snapshot)
-             in
+            in
             // Con el método observeSingleEvent lo que hacemos es evitar que se produzcan duplicados ya que con "obseve"
             // si se producen. El inconveniente es que no se actualizaría en tiempo real los cambios de la base de datos
             // y habría que volver a cargar la aplicación.
             
-                let arTemp=snapshot.value as? Array<AnyObject>
+            let arTemp=snapshot.value as? Array<AnyObject>
+            
+            DataHolder.sharedInstance.arPerros=Array<Perro>()
+            // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
+            // guarden en otro ArrayList (perroi) y se vayan mostrando
+            //OJO
+            //UserId = FIRDatabase.database().reference().child("Perros").child("uid")
+            for co in arTemp! as [AnyObject]{
+               
                 
-                DataHolder.sharedInstance.arPerros=Array<Perro>()
-                // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
-                // guarden en otro ArrayList (perroi) y se vayan mostrando
-                for co in arTemp! as [AnyObject]{
-                    let perroi=Perro(valores: co as! [String:AnyObject])
-                     DataHolder.sharedInstance.arPerros?.append(perroi)
-                }
-           
-           
+                    if(self.UserId == DataHolder.sharedInstance.uid!){
+                        let perroi=Perro(valores: co as! [String:AnyObject])
+                        DataHolder.sharedInstance.arPerros?.append(perroi)
+
+                    }else{
+                                            }
+                
+                           }
             
             
+            
+            
+            
+            
+            self.tbMiTable?.reloadData()
+            
+        })
         
-
-                self.tbMiTable?.reloadData()
-            
-                     })
-
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -62,17 +71,17 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
         }else{
             let numPerros=DataHolder.sharedInstance.arPerros?.count;
             DataHolder.sharedInstance.numPerros=numPerros;
-
-          return  (DataHolder.sharedInstance.arPerros?.count)!
-          
             
+            return  (DataHolder.sharedInstance.arPerros?.count)!
+            
+           
             
         }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TVMiCelda = tableView.dequeueReusableCell(withIdentifier: "miCelda")! as! TVMiCelda
+        let cell:TVMiCelda2 = tableView.dequeueReusableCell(withIdentifier: "miCelda2")! as! TVMiCelda2
         
         // en la variable perroi, para cada posición del arrayList se irán sobrescribiendo con los nuevos
         //valores del perro.
@@ -94,37 +103,37 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
         }else{
             cell.imgSexo?.image = #imageLiteral(resourceName: "femenine")
         }
-
-
+        
+        
         //cell.lblNombreMascota?.text="Tay"
-       /*if (indexPath.row==0) {
-            cell.lblNombreMascota?.text="Coco"
-            cell.imgMascota?.image=#imageLiteral(resourceName: "perritoinch")
-            cell.lblEdad?.text="2 años"
-            cell.lblRaza?.text="Cruce Dogo-P.Alemán"
-        }else if (indexPath.row==1){
-            cell.lblNombreMascota?.text="Toby"
-            cell.imgMascota?.image=#imageLiteral(resourceName: "odd_tonik_3-660x350")
-            cell.lblEdad?.text="6 meses"
-            cell.lblRaza?.text="Cruce B.Maltés-Samoyedo"
-        }else if (indexPath.row==2){
-            cell.lblNombreMascota?.text="Blanca"
-            cell.imgMascota?.image=#imageLiteral(resourceName: "1zcn9r7")
-            cell.lblEdad?.text="4 años"
-            cell.lblRaza?.text="Gran Danés"
-        }else if (indexPath.row==3){
-            cell.lblNombreMascota?.text="Salen"
-            cell.imgMascota?.image=#imageLiteral(resourceName: "Perrito")
-            cell.lblEdad?.text="1 año"
-            cell.lblRaza?.text="Cruce P.Alemán"
-        }else if (indexPath.row==4){
-            cell.lblNombreMascota?.text="Luna"
-            cell.imgMascota?.image=#imageLiteral(resourceName: "perros-graciosos-7")
-            cell.lblEdad?.text="9 meses"
-            cell.lblRaza?.text="Cruce Pitbull"
-        }
- */
-
+        /*if (indexPath.row==0) {
+         cell.lblNombreMascota?.text="Coco"
+         cell.imgMascota?.image=#imageLiteral(resourceName: "perritoinch")
+         cell.lblEdad?.text="2 años"
+         cell.lblRaza?.text="Cruce Dogo-P.Alemán"
+         }else if (indexPath.row==1){
+         cell.lblNombreMascota?.text="Toby"
+         cell.imgMascota?.image=#imageLiteral(resourceName: "odd_tonik_3-660x350")
+         cell.lblEdad?.text="6 meses"
+         cell.lblRaza?.text="Cruce B.Maltés-Samoyedo"
+         }else if (indexPath.row==2){
+         cell.lblNombreMascota?.text="Blanca"
+         cell.imgMascota?.image=#imageLiteral(resourceName: "1zcn9r7")
+         cell.lblEdad?.text="4 años"
+         cell.lblRaza?.text="Gran Danés"
+         }else if (indexPath.row==3){
+         cell.lblNombreMascota?.text="Salen"
+         cell.imgMascota?.image=#imageLiteral(resourceName: "Perrito")
+         cell.lblEdad?.text="1 año"
+         cell.lblRaza?.text="Cruce P.Alemán"
+         }else if (indexPath.row==4){
+         cell.lblNombreMascota?.text="Luna"
+         cell.imgMascota?.image=#imageLiteral(resourceName: "perros-graciosos-7")
+         cell.lblEdad?.text="9 meses"
+         cell.lblRaza?.text="Cruce Pitbull"
+         }
+         */
+        
         return cell
     }
     
@@ -135,23 +144,23 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
         print(DataHolder.sharedInstance.indexPerro!)
         performSegue(withIdentifier: "trantable", sender: self)
     }
-
+    
     @IBAction func btnVolver() {
         DataHolder.sharedInstance.sEmail=""
         DataHolder.sharedInstance.sPass=""
         try! FIRAuth.auth()!.signOut()
-
+        
         
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

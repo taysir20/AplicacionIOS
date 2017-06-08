@@ -11,6 +11,9 @@
 		140D6AB21EBB393700989AD9 /* Perro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140D6AB11EBB393700989AD9 /* Perro.swift */; };
 		140D6AB81EBB39C800989AD9 /* Restablecer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140D6AB71EBB39C800989AD9 /* Restablecer.swift */; };
 		140D6ABA1EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140D6AB91EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift */; };
+		143BBDFE1EE9A64B006DD83A /* CrearPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143BBDFD1EE9A64B006DD83A /* CrearPerfil.swift */; };
+		143BBE001EE9C0D7006DD83A /* MisPerros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143BBDFF1EE9C0D7006DD83A /* MisPerros.swift */; };
+		143BBE021EE9C1FD006DD83A /* TVMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143BBE011EE9C1FD006DD83A /* TVMiCelda2.swift */; };
 		143D53FD1E8A61D700A33535 /* LocationAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D53FC1E8A61D700A33535 /* LocationAdmin.swift */; };
 		147DBFA61ED6C9740038CB42 /* RegistroPerro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DBFA51ED6C9740038CB42 /* RegistroPerro.swift */; };
 		14B15F1D1E8AB1740034BAB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */; };
@@ -36,6 +39,9 @@
 		140D6AB11EBB393700989AD9 /* Perro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Perro.swift; sourceTree = "<group>"; };
 		140D6AB71EBB39C800989AD9 /* Restablecer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restablecer.swift; sourceTree = "<group>"; };
 		140D6AB91EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCMiCeldaColeccionFotos.swift; sourceTree = "<group>"; };
+		143BBDFD1EE9A64B006DD83A /* CrearPerfil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrearPerfil.swift; sourceTree = "<group>"; };
+		143BBDFF1EE9C0D7006DD83A /* MisPerros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MisPerros.swift; path = ../MisPerros.swift; sourceTree = "<group>"; };
+		143BBE011EE9C1FD006DD83A /* TVMiCelda2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMiCelda2.swift; sourceTree = "<group>"; };
 		143D53FC1E8A61D700A33535 /* LocationAdmin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAdmin.swift; sourceTree = "<group>"; };
 		147DBFA51ED6C9740038CB42 /* RegistroPerro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroPerro.swift; sourceTree = "<group>"; };
 		14B15F1C1E8AB1740034BAB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -134,6 +140,9 @@
 				140254731EC1A108002482E5 /* InfoPerroViewController.swift */,
 				147DBFA51ED6C9740038CB42 /* RegistroPerro.swift */,
 				14E875C61EE93B0700EA91FC /* Contactar.swift */,
+				143BBDFD1EE9A64B006DD83A /* CrearPerfil.swift */,
+				143BBDFF1EE9C0D7006DD83A /* MisPerros.swift */,
+				143BBE011EE9C1FD006DD83A /* TVMiCelda2.swift */,
 			);
 			path = PrimeraEntrega;
 			sourceTree = "<group>";
@@ -269,6 +278,7 @@
 			files = (
 				D8F174171E819CD300314D60 /* TVMiCelda.swift in Sources */,
 				D8B809DF1E82CF3700371276 /* CVCMiCelda2.swift in Sources */,
+				143BBE021EE9C1FD006DD83A /* TVMiCelda2.swift in Sources */,
 				143D53FD1E8A61D700A33535 /* LocationAdmin.swift in Sources */,
 				140D6AB21EBB393700989AD9 /* Perro.swift in Sources */,
 				140D6ABA1EBB541C00989AD9 /* CVCMiCeldaColeccionFotos.swift in Sources */,
@@ -278,6 +288,8 @@
 				140D6AB81EBB39C800989AD9 /* Restablecer.swift in Sources */,
 				140254741EC1A108002482E5 /* InfoPerroViewController.swift in Sources */,
 				D8F174131E81452000314D60 /* Registrar.swift in Sources */,
+				143BBE001EE9C0D7006DD83A /* MisPerros.swift in Sources */,
+				143BBDFE1EE9A64B006DD83A /* CrearPerfil.swift in Sources */,
 				D8F174011E8128C100314D60 /* AppDelegate.swift in Sources */,
 				147DBFA61ED6C9740038CB42 /* RegistroPerro.swift in Sources */,
 				D8B809DB1E82CAD000371276 /* VCColeccion.swift in Sources */,

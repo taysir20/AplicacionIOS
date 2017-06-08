@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 import FirebaseAuth
 
 class IniciarSesion: UIViewController {
@@ -60,7 +62,22 @@ class IniciarSesion: UIViewController {
                 let when = DispatchTime.now() + 3
                 DispatchQueue.main.asyncAfter(deadline: when){
                     
-                    self.performSegue(withIdentifier: "logueo", sender: self)
+                   let UserId = FIRAuth.auth()?.currentUser?.uid
+                    DataHolder.sharedInstance.firDataBaseRef.child("Profile").child(UserId!).observeSingleEvent(of: FIRDataEventType.value, with:{ (snapshot) in
+                        
+                        DataHolder.sharedInstance.Usuario=user
+                        let value = snapshot.value as? NSDictionary
+                        DataHolder.sharedInstance.uid=UserId
+                        if(value == nil){
+                            self.performSegue(withIdentifier: "perfil", sender: self)
+                        }else{
+                            self.performSegue(withIdentifier: "logueo", sender: self)
+                        }
+                        
+                        
+                    })
+                    
+                    
                     
                 }
                 
