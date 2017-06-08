@@ -174,7 +174,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EQE-bt-dCd" id="nwN-CR-9Uz">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Lk-Wb-hIM">
@@ -426,26 +426,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cot-kV-TgN">
-                                                <rect key="frame" x="8" y="773" width="304" height="70"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Donde encontrar a tu nuevo amigo..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJb-Oh-Id4">
+                                                <rect key="frame" x="28" y="744" width="265" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hp2-0y-lll">
-                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="70"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </mapView>
-                                                    <button clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mq-f3-BFu">
-                                                        <rect key="frame" x="-6" y="-7" width="317" height="84"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <connections>
-                                                            <action selector="mostrarMapa" destination="OlE-xG-0yC" eventType="touchUpInside" id="EpG-nR-Nnc"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
+                                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T2D-fW-07g">
-                                                <rect key="frame" x="8" y="851" width="304" height="128"/>
+                                                <rect key="frame" x="8" y="948" width="304" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xni-SI-0R7">
@@ -487,13 +476,30 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Donde encontrar a tu nuevo amigo..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJb-Oh-Id4">
-                                                <rect key="frame" x="28" y="744" width="265" height="21"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-Hh-8yO">
+                                                <rect key="frame" x="8" y="773" width="304" height="77"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="muestrameRuta:" destination="OlE-xG-0yC" eventType="touchUpInside" id="paU-4M-R0Q"/>
+                                                </connections>
+                                            </button>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QaQ-Md-3Ii">
+                                                <rect key="frame" x="8" y="773" width="304" height="77"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </mapView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKf-Xh-nRV">
+                                                <rect key="frame" x="15" y="891" width="291" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Contactar..."/>
+                                                <connections>
+                                                    <segue destination="Yyf-kM-t2A" kind="show" id="7Mr-49-NYu"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -558,8 +564,9 @@
                     <size key="freeformSize" width="320" height="1400"/>
                     <connections>
                         <outlet property="ColeccionFotos" destination="6jO-o6-5ma" id="25b-dv-1cB"/>
+                        <outlet property="btnContactar" destination="PKf-Xh-nRV" id="2df-dF-h3D"/>
+                        <outlet property="btnMostrarRuta" destination="hCF-Hh-8yO" id="Dk0-hQ-R1f"/>
                         <outlet property="imgSexo" destination="uXk-wR-Jba" id="DsL-za-vzO"/>
-                        <outlet property="mapa" destination="0mq-f3-BFu" id="roo-DJ-RA3"/>
                         <outlet property="nombreMascota" destination="YMm-5B-EJY" id="rdZ-gS-ZSX"/>
                         <outlet property="sCuidador" destination="1YK-uQ-Fez" id="oUE-xG-bXi"/>
                         <outlet property="sEdad" destination="x2m-A1-Qd3" id="IXR-DM-hR6"/>
@@ -567,7 +574,6 @@
                         <outlet property="sTelefono" destination="uck-fO-n7a" id="Gc8-nq-5NK"/>
                         <outlet property="shadowView" destination="Jo0-Cy-tFm" id="jXG-DE-fJK"/>
                         <outlet property="shadowView2" destination="uKo-XF-Uab" id="PFK-gs-sB6"/>
-                        <outlet property="shadowView3" destination="Cot-kV-TgN" id="bj5-go-eaK"/>
                         <outlet property="shadowView4" destination="T2D-fW-07g" id="nqS-g8-ANF"/>
                         <outlet property="shareFacebook" destination="96G-tW-u2F" id="3Fh-Cq-6Tp"/>
                         <outlet property="shareTwitter" destination="dGP-tm-SFe" id="ikn-Jh-oVA"/>
@@ -578,12 +584,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45A-fi-5Eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2295" y="-1573"/>
+            <point key="canvasLocation" x="2295" y="-1573.943661971831"/>
         </scene>
-        <!--Mapa-->
+        <!--Contactar-->
         <scene sceneID="xFX-hP-oMC">
             <objects>
-                <viewController id="Yyf-kM-t2A" customClass="VCMapa" customModule="PrimeraEntrega" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yyf-kM-t2A" customClass="Contactar" customModule="PrimeraEntrega" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dXv-An-Awl"/>
                         <viewControllerLayoutGuide type="bottom" id="OH1-of-DaE"/>
@@ -592,19 +598,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-Hh-8yO">
-                                <rect key="frame" x="16" y="395" width="288" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47934520244598389" blue="0.99908632040023804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <state key="normal" title="Muestrame la ruta">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    <color key="titleShadowColor" red="0.14582490821444605" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="muestrameRuta:" destination="Yyf-kM-t2A" eventType="touchUpInside" id="3Wl-pt-GgB"/>
-                                </connections>
-                            </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZKv-Ks-Fan">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -627,11 +620,28 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvu-32-oYY">
+                                <rect key="frame" x="16" y="352" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enviar mensaje"/>
+                                <connections>
+                                    <action selector="enviarMensaje:" destination="Yyf-kM-t2A" eventType="touchUpInside" id="WHw-is-VYV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QG6-Vd-eaF">
+                                <rect key="frame" x="238" y="352" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Llamar"/>
+                                <connections>
+                                    <action selector="llamar:" destination="Yyf-kM-t2A" eventType="touchUpInside" id="iRd-nG-Jor"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="btnMostrarRuta" destination="hCF-Hh-8yO" id="glf-Z7-M0R"/>
+                        <outlet property="btnLlamar" destination="QG6-Vd-eaF" id="k31-Hv-F32"/>
+                        <outlet property="btnSend" destination="uvu-32-oYY" id="02t-2k-4Sq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obB-GP-8zm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1136,8 +1146,9 @@
         <image name="whatsapp" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="naO-eq-pNK"/>
-        <segue reference="XMj-ER-ebE"/>
+        <segue reference="zNh-mB-7kW"/>
+        <segue reference="Y4U-sh-wVR"/>
+        <segue reference="wrf-K2-TLr"/>
         <segue reference="wNY-MG-OEv"/>
     </inferredMetricsTieBreakers>
 </document>

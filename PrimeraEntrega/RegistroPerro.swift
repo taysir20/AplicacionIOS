@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import MapKit
 
-class RegistroPerro: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class RegistroPerro: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate{
     
     @IBOutlet weak var perrerasPicker: UIPickerView!
         var arrayPerreras = ["Perreza Mnicipal Badajoz", "Perrera Municipal Fuenlabrada", "Liga para la proteccion de Animales"]

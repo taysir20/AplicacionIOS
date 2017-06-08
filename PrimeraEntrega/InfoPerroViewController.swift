@@ -12,6 +12,8 @@ import Social
 
 class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
     var imgMascota: UIImageView!
+    @IBOutlet weak var btnContactar: UIButton!
+      @IBOutlet var btnMostrarRuta: UIButton!
     @IBOutlet weak var shareWhatsApp: UIButton!
     @IBOutlet weak var shareTwitter: UIButton!
     @IBOutlet weak var shareFacebook: UIButton!
@@ -33,8 +35,23 @@ class InfoPerroViewController: UIViewController, UICollectionViewDelegate,UIColl
      @IBOutlet weak var sEmail: UILabel!
     
     
-        
-        
+    @IBAction func muestrameRuta(_ sender: Any) {
+        let perroi:Perro=DataHolder.sharedInstance.arPerros![DataHolder.sharedInstance.indexPerro!]
+        let latitude:CLLocationDegrees = perroi.dbLat!
+        let longitude:CLLocationDegrees = perroi.dbLon!
+        let distancia:CLLocationDistance=1000
+        let coordenada = CLLocationCoordinate2DMake(latitude,longitude)
+        let region = MKCoordinateRegionMakeWithDistance(coordenada,distancia,distancia)
+        let opciones=[MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: region.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: region.span)]
+        let placemark = MKPlacemark(coordinate: coordenada)
+        let mapItem = MKMapItem(placemark:placemark)
+        mapItem.name=perroi.sNombre!
+        mapItem.openInMaps(launchOptions: opciones)
+
+    }
+  
+
+    
     
 
     override func viewDidLoad() {
@@ -249,7 +266,5 @@ func verAlerta(service: String){
         
     }
     
-    @IBAction func mostrarMapa(){
-          self.performSegue(withIdentifier: "verMapa", sender: self)
-    }
+    
 }
