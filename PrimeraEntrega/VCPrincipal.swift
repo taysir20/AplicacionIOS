@@ -72,6 +72,9 @@ class VCPrincipal: UIViewController, UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("xxxxxxxxxxxxx")
+        print(DataHolder.sharedInstance.uid)
+        print("xxxxxxxxxxxxx")
         let cell:TVMiCelda = tableView.dequeueReusableCell(withIdentifier: "miCelda")! as! TVMiCelda
         
         // en la variable perroi, para cada posición del arrayList se irán sobrescribiendo con los nuevos

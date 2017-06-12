@@ -243,7 +243,7 @@ func verAlerta(service: String){
     }
     
     
-    //TUVILLA
+
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { // esta funcion funciona como un for que ejecuta cada index
         let cell:CVCMiCeldaColeccionFotos = collectionView.dequeueReusableCell(withReuseIdentifier: "miCeldaColeccion", for: indexPath) as! CVCMiCeldaColeccionFotos
