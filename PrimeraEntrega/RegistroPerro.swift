@@ -14,8 +14,9 @@ import MapKit
 
 class RegistroPerro: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate{
     
+    @IBOutlet weak var lblSubida: UILabel!
     @IBOutlet weak var perrerasPicker: UIPickerView!
-        var arrayPerreras = ["Perreza Mnicipal Badajoz", "Perrera Municipal Fuenlabrada", "Liga para la proteccion de Animales"]
+        var arrayPerreras = ["Perrera Municipal Badajoz", "Perrera Municipal Fuenlabrada", "Liga para la proteccion de Animales"]
     let imgPicker = UIImagePickerController()
     @IBOutlet weak var btnCamara: UIButton!
     @IBOutlet weak var btnGaleria: UIButton!
@@ -79,7 +80,7 @@ class RegistroPerro: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             }
             let downloadURL = metadata.downloadURL
             self.miperro.sRutaColeccionMascota=[self.rutaImg]
-
+            self.lblSubida.text="Foto subida!"
             
 
         }
@@ -138,7 +139,6 @@ class RegistroPerro: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         
         if (row == 0) {
-            
             lat = 38.779601
             long = -7.004673
         } else if (row == 1) {

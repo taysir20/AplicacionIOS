@@ -16,6 +16,7 @@ import FirebaseAuth
 
 class CrearPerfil: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
+    @IBOutlet weak var lblSubida: UILabel!
     @IBOutlet weak var imgPerfil: UIImageView!
     @IBOutlet weak var nombreUsuario: UITextField!
     @IBOutlet weak var generoUsuario: UITextField!
@@ -80,7 +81,7 @@ class CrearPerfil: UIViewController,UIImagePickerControllerDelegate, UINavigatio
             }
             let downloadURL = metadata.downloadURL
         }
-        
+        self.lblSubida.text="Foto subida!"
         
             
         }

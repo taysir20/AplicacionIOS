@@ -32,11 +32,10 @@ class MisPerros: UIViewController, UITableViewDelegate,UITableViewDataSource {
             // si se producen. El inconveniente es que no se actualizaría en tiempo real los cambios de la base de datos
             // y habría que volver a cargar la aplicación.
             let arTemp=snapshot.value as? Array<AnyObject>
-            
             DataHolder.sharedInstance.arPerros=Array<Perro>()
             // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
             // guarden en otro ArrayList (perroi) y se vayan mostrando
-            for co in arTemp! as [AnyObject]{
+           for co in arTemp! as [AnyObject]{
                 let perroi=Perro(valores: co as! [String:AnyObject])
                 DataHolder.sharedInstance.arPerros?.append(perroi)
             }
